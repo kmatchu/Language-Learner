@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+    <div id="jumble"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script> type = "text/javascript"
+     
+    //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
+       var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
+        function shuffleWord(word) {
+            var shuffledWord = '';
+            word = word.split('');
+            while (word.length > 0) {
+                shuffledWord += word.splice(word.length * Math.random() << 0, 1);
+            }
+            return shuffledWord;
+        }
+        var newWordArr = wordArr.map(elem => shuffleWord(elem));
+        console.log(newWordArr)
+        // This appends to the page the scrambled words as separare paragraphs
+        newWordArr.forEach(elem => $("#jumble").append("<p>" + elem + "</p"));
+
+    </script>
+</body>
+
+</html>
