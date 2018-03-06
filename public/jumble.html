@@ -12,13 +12,14 @@
 
 <body>
     <div id="jumble"></div>
-
+    <div id="lookup"> </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script> type = "text/javascript"
-     
-    //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
-       var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
+    
+        var expect = require("chai").expect;
+        //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
+        var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
         function shuffleWord(word) {
             var shuffledWord = '';
             word = word.split('');
@@ -31,6 +32,30 @@
         console.log(newWordArr)
         // This appends to the page the scrambled words as separare paragraphs
         newWordArr.forEach(elem => $("#jumble").append("<p>" + elem + "</p"));
+
+        describe("Multiply", function () {
+            it("should multiply properly when passed numbers", function () {
+                expect(multiply(2, 4)).to.equal(8);
+            });
+
+            it("should throw when not passed numbers", function () {
+                expect(function () {
+                    multiply(2, "4");
+                }).to.throw(Error);
+            });
+        });
+
+        var searchWord = "hola"
+        queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=es-en";
+        $.ajax({
+            url: queryURL,
+            type: "GET",
+            dataType: "json",
+        }).then(function (response) {
+            $("#lookup").append("<div> Lookup: " + searchWord + "</div>")
+            $("#lookup").append("<div> Translation: " + response.text[0] + "</div>")
+            console.log(response.text[0])
+        });
 
     </script>
 </body>
