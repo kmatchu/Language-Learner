@@ -17,90 +17,58 @@
 <body>
     <div class="container">
         <div class="row" id="language">
-            <button class="col-xs-4 lang" value="fr">
-                French Flag</button>
-            <button class="col-xs-4 lang" value="es">
-                Spanish Flag</button>
-            <button class="col-xs-4 lang" value="de">
-                German Flag</button>
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="fr">
+                <img class="flag" src="css/images/french-flag.png" alt="french-flag">
+            </button>
+
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="es">
+                <img class="flag" src="css/images/spain-flag.png" alt="spain-flag">
+            </button>
+
+
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="de">
+                <img class="flag" src="css/images/germany-flag.png" alt="germany-flag">
+            </button>
+
         </div>
         <div class="row" id="game">
-            <div class="col-xs-4" id="jumb">
-                <div class="row">
-                    <button class="col-xs-12">
-                        gameimg here
-                    </button>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        Jumble
-                    </div>
-                </div>
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="jumble">
+                    jumbimg here
+                </button>
             </div>
-            <div class="col-xs-4" id="ws">
-                <div class="row">
-                    <button class="col-xs-12">
-                        gameimg here
-                    </button>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        Word Search
-                    </div>
-                </div>
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="ws">
+                    wsimg here
+                </button>
             </div>
-            <div class="col-xs-4" id="hang">
-                <div class="row">
-                    <button class="col-xs-12">
-                        gameimg here
-                    </button>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        Hangman
-                    </div>
-                </div>
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="hangman">
+                    hangimg here
+                </button>
             </div>
         </div>
-        <div class="row" id="diff">
+        <div class="row">
             <div class="col-xs-4">
-                <button id="easy">Easy</button>
+                <button class="diff" value="easy">Easy</button>
             </div>
             <div class="col-xs-4">
-                <button id="med">Medium</button>
+                <button class="diff" value="med">Medium</button>
             </div>
             <div class="col-xs-4">
-                <button id="hard">Hard</button>
+                <button class="diff" value="hard">Hard</button>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <button id="goBtn"> Play!</button>
+                <button id="playBtn"> Play!</button>
             </div>
         </div>
-
-
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(document).on("click", ".lang", function () {
-            var langState = $(this).val();
-            console.log(langState);
-            return langState;
-        });
-        $(document).on("click", ".lang", function () {
-            var langState = $(this).val();
-            console.log(langState);
-            return langState;
-        });
-
-        let state = {
-            language: "en",
-            game: "jumb",
-            difficulty: "easy"
-        }
+    <script type="text/javascript" src="js/home.js">
 
     </script>
 </body>

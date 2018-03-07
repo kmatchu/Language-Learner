@@ -17,19 +17,19 @@
  console.log(newWordArr);
  newWordArr.forEach(elem => $("#jumble").append("<div id='word" + newWordArr.indexOf(elem) + "'>" + elem + "</div> <div class='correct' id='correct" + newWordArr.indexOf(elem) + "'> </div> <div> <form> <input class='form-control jumbleform' id='jumbleGuess" + newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div> <button class='checkBtn' id='btn" + newWordArr.indexOf(elem) + "'> </button>"));
 
-
-     // event.preventDefault();
+//  This onclick function checks if the user has un-scrambled the word correctly
      $(".checkBtn").on("click", function () {
          for (let i = 0; i < wordArr.length; i++) {
          if ($("#jumbleGuess" + [i]).val() === wordArr[i]) {
              $("#correct" + [i]).text(" Correct!");
             //  console.log(true);
          }
-        //  else {
-        //      console.log(false);
-        //  }
      }
  });
+
+//  requiring our state from home.js to get language
+//  var gs = require('home.js');
+//  console.log(gs.state)
 
  // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
  $("#wordSearchBtn").on("click", function () {
