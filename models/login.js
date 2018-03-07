@@ -7,25 +7,25 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/config.json");
 
 // Creates a "Login" model that matches up with DB
-var Login = sequelize.define("login", {
-  username: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      len: [1]
-    }
-  },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      len: [5]
-    }
-  }
-});
+// var Login = sequelize.define("login", {
+//   username: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     validate: {
+//       len: [1]
+//     }
+//   },
+//   password: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     validate: {
+//       len: [5]
+//     }
+//   }
+// });
 
 // Syncs with DB
-Login.sync();
+// Login.sync();
 
 // Makes the Chirp Model available for other files (will also create a table)
-module.exports = Login;
+// module.exports = Login;
