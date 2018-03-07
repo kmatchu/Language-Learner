@@ -4,29 +4,105 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
 <body>
-    Home Page
-    <button>
-        <a href="jumble.html">Word Jumble</a>
-    </button>
-    <button>
-        <a href="hangman.html">Hangman</a>
-    </button>
-    <button>
-        <a href="wordsearch.html">Word Search</a>
-    </button>
+    <div class="container">
+        <div class="row" id="language">
+            <button class="col-xs-4 lang" value="fr">
+                French Flag</button>
+            <button class="col-xs-4 lang" value="es">
+                Spanish Flag</button>
+            <button class="col-xs-4 lang" value="de">
+                German Flag</button>
+        </div>
+        <div class="row" id="game">
+            <div class="col-xs-4" id="jumb">
+                <div class="row">
+                    <button class="col-xs-12">
+                        gameimg here
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        Jumble
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4" id="ws">
+                <div class="row">
+                    <button class="col-xs-12">
+                        gameimg here
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        Word Search
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4" id="hang">
+                <div class="row">
+                    <button class="col-xs-12">
+                        gameimg here
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        Hangman
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="diff">
+            <div class="col-xs-4">
+                <button id="easy">Easy</button>
+            </div>
+            <div class="col-xs-4">
+                <button id="med">Medium</button>
+            </div>
+            <div class="col-xs-4">
+                <button id="hard">Hard</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="goBtn"> Play!</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).on("click", ".lang", function () {
+            var langState = $(this).val();
+            console.log(langState);
+            return langState;
+        });
+        $(document).on("click", ".lang", function () {
+            var langState = $(this).val();
+            console.log(langState);
+            return langState;
+        });
+
+        let state = {
+            language: "en",
+            game: "jumb",
+            difficulty: "easy"
+        }
+
+    </script>
 </body>
 
 </html>
