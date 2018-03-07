@@ -1,5 +1,6 @@
 var expect = require("chai").expect;
 
+var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
 function shuffleWord(word) {
     var shuffledWord = '';
     word = word.split('');
@@ -7,6 +8,12 @@ function shuffleWord(word) {
         shuffledWord += word.splice(word.length * Math.random() << 0, 1);
     }
     return shuffledWord;
+}
+var newWordArr = wordArr.map(elem => shuffleWord(elem));
+for (var i = 0; i < newWordArr.length; i++) {
+    if (newWordArr[i] === wordArr[i]) {
+        shuffleWord(newWordArr[i])
+    }
 }
 
 describe("shuffleWord", function () {
