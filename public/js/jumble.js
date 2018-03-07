@@ -1,4 +1,3 @@
-
 //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
 var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
 function shuffleWord(word) {
@@ -9,17 +8,28 @@ function shuffleWord(word) {
     }
     return shuffledWord;
 }
-module.exports = shuffleWord;
-
 var newWordArr = wordArr.map(elem => shuffleWord(elem));
 for (var i = 0; i < newWordArr.length; i++) {
     if (newWordArr[i] === wordArr[i]) {
         shuffleWord(newWordArr[i])
     }
 }
-// console.log(newWordArr);
-newWordArr.forEach(elem => $("#jumble").append("<p>" + elem + "</p"));
+console.log(newWordArr);
+newWordArr.forEach(elem => $("#jumble").append("<div id='word" + newWordArr.indexOf(elem) + "'>" + elem + "</div> <div> <form> <input class='form-control' id='jumbleGuess" + newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div> <button class='checkBtn' id='btn" + newWordArr.indexOf(elem) + "'> </button>"));
 
+// UPDATE
+// This onlcick function will check if the guessed word (#jumbleGuess[i]) matches the correct word (wordArr[i])
+$(".checkBtn").on("click", function () {
+    event.preventDefault();
+    for (var i = 0; i < wordArr.length; i++) {
+        if ($("#jumbleGuess" + [i]).val() === wordArr[i]) {
+            console.log(true);
+        }
+        else {
+            console.log(false);
+        }
+    }
+});
 
 // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
 $("#wordSearchBtn").on("click", function () {
