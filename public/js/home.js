@@ -23,17 +23,22 @@ var stateFun = function () {
             console.log("please select a language, game, and difficulty level before proceeding")
         }
         else if (state.game === "jumble"){
-            window.open($("#playBtn").attr(("href"), "jumble.html"));
+            $("#playBtn").attr("href", "jumble.html");
+            window.location.replace($("#playBtn").attr(("href")));
             console.log("play j")
         }
         else if (state.game === "ws"){
+            $("#playBtn").attr("href", "wordsearch.html");
+            window.location.replace($("#playBtn").attr(("href")));
             console.log("play ws")
         }
         else{
+            $("#playBtn").attr("href", "hangman.html");
+            window.location.replace($("#playBtn").attr(("href")));
             console.log("play h")
         }
-})
-}
+});
+};
 stateFun();
 // module.exports = state;
 
