@@ -6,7 +6,7 @@
 // =============================================================
 
 // Requiring our Todo model
-var db = require("../models/login.js");
+var db = require("../models");
 
 // Routes
 // =============================================================
@@ -23,6 +23,12 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+
+  app.get("/api/french", function(req, res) {
+    db.Word.findAll({}).then(function(dbWord) {
+      res.json(dbWord);
+    })
+  })
 
   // POST route for saving a new user
   app.post("/api/posts", function(req, res) {
