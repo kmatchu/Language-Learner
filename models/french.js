@@ -8,7 +8,7 @@ module.exports = function(sequelize, Sequelize) {
 // var sequelize = require("../config/config.json");
 
 // Creates a "Login" model that matches up with DB
-var Word = sequelize.define("french", {
+var Word = sequelize.define("French", {
   Word: {
     type: Sequelize.STRING,
     allowNull: false
@@ -17,6 +17,8 @@ var Word = sequelize.define("french", {
     type: Sequelize.INTEGER,
     allowNull: false
   }
+}, {
+    timestamps: false
 });
 
 // Syncs with DB
