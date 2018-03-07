@@ -43,9 +43,14 @@
          type: "GET",
          dataType: "json",
      }).then(function (response) {
+         if(response.text[0] !== searchWord){
          $("#lookup").append("<div> Translation: " + response.text[0] + "</div>")
          console.log(response.text[0])
+         }
+         else{
+            $("#lookup").append("<div> No translation found for: " + searchWord + "</div>")
+         }
      }).catch(function (response){
-        $("#lookup").append("<div> Translation: No translation found </div>")
+        $("#lookup").append("<div> No translation found </div>")
      })
  });
