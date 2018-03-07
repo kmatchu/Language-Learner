@@ -7,7 +7,7 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/config.json");
 
 // Creates a "Login" model that matches up with DB
-// var Login = sequelize.define("login", {
+// var word = sequelize.define("french", {
 //   username: {
 //     type: Sequelize.STRING,
 //     allowNull: false,
