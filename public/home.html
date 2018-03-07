@@ -4,29 +4,73 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Home Page</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
 <body>
-    Home Page
-    <button>
-        <a href="jumble.html">Word Jumble</a>
-    </button>
-    <button>
-        <a href="hangman.html">Hangman</a>
-    </button>
-    <button>
-        <a href="wordsearch.html">Word Search</a>
-    </button>
+    <div class="container">
+        <div class="row" id="language">
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="fr">
+                <img class="flag" src="css/images/french-flag.png" alt="french-flag">
+            </button>
+
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="es">
+                <img class="flag" src="css/images/spain-flag.png" alt="spain-flag">
+            </button>
+
+
+            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="de">
+                <img class="flag" src="css/images/germany-flag.png" alt="germany-flag">
+            </button>
+
+        </div>
+        <div class="row" id="game">
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="jumble">
+                    jumbimg here
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="ws">
+                    wsimg here
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <button class="col-xs-12 game" value="hangman">
+                    hangimg here
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <button class="diff" value="easy">Easy</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="diff" value="med">Medium</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="diff" value="hard">Hard</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="playBtn"> Play!</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/home.js">
+
+    </script>
 </body>
 
 </html>

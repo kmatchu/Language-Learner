@@ -1,0 +1,11 @@
+.container{
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.flag{
+    width:100%
+}
+.searchdiv{
+    border: 3px solid blue;
+}
