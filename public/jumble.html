@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" href="./js/jumble.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
@@ -37,56 +34,10 @@
         <div id="lookup"> </div>
     </aside>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jumble.js"></script>
 
-    <script> type = "text/javascript"
-        //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
-        var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
-        function shuffleWord(word) {
-            var shuffledWord = '';
-            word = word.split('');
-            while (word.length > 0) {
-                shuffledWord += word.splice(word.length * Math.random() << 0, 1);
-            }
-            return shuffledWord;
-        }
-        var newWordArr = wordArr.map(elem => shuffleWord(elem));
-        for (var i = 0; i < newWordArr.length; i++) {
-            if (newWordArr[i] === wordArr[i]) {
-                shuffleWord(newWordArr[i])
-            }
-        }
-        console.log(newWordArr);
-        newWordArr.forEach(elem => $("#jumble").append("<div id='word" + newWordArr.indexOf(elem) + "'>" + elem + "</div> <div> <form> <input class='form-control' id='jumbleGuess" + newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div> <button class='checkBtn' id='btn" + newWordArr.indexOf(elem) + "'> </button>"));
-
-        $(".checkBtn").on("click", function () {
-            event.preventDefault();
-            for (var i = 0; i < wordArr.length; i++) {
-                if ($("#jumbleGuess" + [i]).val() === wordArr[i]) {
-                    console.log(true);
-                }
-                else {
-                    console.log(false);
-                }
-            }
-        });
-
-        // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
-        $("#wordSearchBtn").on("click", function () {
-            event.preventDefault();
-            $("#lookup").text("");
-            var searchWord = $("#wordInput").val();
-            var langCode = "es"
-            queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=" + langCode + "-en";
-            $.ajax({
-                url: queryURL,
-                type: "GET",
-                dataType: "json",
-            }).then(function (response) {
-                $("#lookup").append("<div> Translation: " + response.text[0] + "</div>")
-                console.log(response.text[0])
-            });
-        });
-    </script>
 </body>
 
 </html>
