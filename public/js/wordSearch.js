@@ -1,4 +1,17 @@
-var starting = ["hello","kevin","crap","shit"];
+var useArr = sessionStorage.getItem("wordArr").split(",");
+console.log(useArr);
+// var spawnUseArr = function(){
+//     var rand = Math.floor(Math.random()*99);
+//     useArr.push(startingArr[rand]);
+//     startingArr.splice(rand,1);
+// }
+// var useArr = [];
+// console.log(useArr);
+
+// for(var i=0;i<10;i++){
+//     spawnUseArr();
+// }
+// var starting = ["hello","kevin","crap","shit"];
 // var starting = ["hello","kevin","crap","shit","lorem","libero","tortor","terminal","output","problems","french","package","wire","color"];
 var boxWS = $("<div>").addClass("col-md-1 boxWS unoccupied wrong");
 // console.log(boxWS);
@@ -19,6 +32,7 @@ var displArr = [
 
 ];
 
+
 // console.log($(displArr[0][-2]));
 var makeWordsSplit = function(wordArr){
     var wordSpli = [];
@@ -27,7 +41,7 @@ var makeWordsSplit = function(wordArr){
     wordSpli.push(spliArr); };
     return wordSpli;  };
 
-console.log(makeWordsSplit(starting));
+// console.log(makeWordsSplit(starting));
 
 var renderGrid = function(){
     for(var i=0;i<12;i++){
@@ -53,8 +67,8 @@ var checkField = function(inputWordArr){
     var spawnSpot = spawn();
     var direction = randDirection();
     var empty = true;
-    console.log(spawnSpot);
-    console.log(direction);
+    // console.log(spawnSpot);
+    // console.log(direction);
     // console.log($(obj).text());
     switch (direction){
         case "left":
@@ -143,9 +157,9 @@ var checkField = function(inputWordArr){
 
 };
 
-for (var i=0;i<makeWordsSplit(starting).length;i++){
-    checkField(makeWordsSplit(starting)[i]);
-    console.log("LOg", makeWordsSplit(starting).length);
+for (var i=0;i<makeWordsSplit(useArr).length;i++){
+    checkField(makeWordsSplit(useArr)[i]);
+    // console.log("LOg", makeWordsSplit(starting).length);
 }
 
 var renderFiller = function(){
@@ -157,19 +171,26 @@ var renderFiller = function(){
 renderFiller();
 
 var currentGuess = []
+var displayArray = []
 $(document).on("click",".clicker", function(){
     currentGuess.push($(this).text());
     $(this).addClass("highlight");
-    for (var i=0;i<makeWordsSplit(starting).length;i++){
-        if(makeWordsSplit(starting)[i].toString() === currentGuess.toString()){
+    for (var i=0;i<makeWordsSplit(useArr).length;i++){
+        if(makeWordsSplit(useArr)[i].toString() === currentGuess.toString()){
         $(".highlight").addClass("correct");
+        displayArray.push(currentGuess.toString().replace(/,/g,""));
+        $(".foundWords").text(displayArray.toString());
         currentGuess = [];
         }
     }
-    console.log(currentGuess);
+    // console.log(currentGuess);
 });
 
 $(document).on("click",".wrong",function(){
+    $(".highlight").removeClass("highlight");
+    currentGuess = [];
+})
+$(document).on("click",".highlight",function(){
     $(".highlight").removeClass("highlight");
     currentGuess = [];
 })
