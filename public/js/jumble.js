@@ -4,9 +4,11 @@ var language = sessionStorage.getItem("lang");
 console.log(language);
 var difficulty = sessionStorage.getItem("diff");
 console.log(difficulty);
+var wordArray = sessionStorage.getItem("wordArr").split(",")
+console.log(wordArray);
 
- //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
- var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
+
+ //  This section contains the array of words to scramble (wordArray) and then scrambles each word in the array (newWordArr)
  function shuffleWord(word) {
      var shuffledWord = '';
      word = word.split('');
@@ -15,9 +17,9 @@ console.log(difficulty);
      }
      return shuffledWord;
  }
- var newWordArr = wordArr.map(elem => shuffleWord(elem));
+ var newWordArr = wordArray.map(elem => shuffleWord(elem));
  for (var i = 0; i < newWordArr.length; i++) {
-     if (newWordArr[i] === wordArr[i]) {
+     if (newWordArr[i] === wordArray[i]) {
          shuffleWord(newWordArr[i])
      }
  }
@@ -26,17 +28,12 @@ console.log(difficulty);
 
 //  This onclick function checks if the user has un-scrambled the word correctly
      $(".checkBtn").on("click", function () {
-         for (let i = 0; i < wordArr.length; i++) {
-         if ($("#jumbleGuess" + [i]).val() === wordArr[i]) {
+         for (let i = 0; i < wordArray.length; i++) {
+         if ($("#jumbleGuess" + [i]).val() === wordArray[i]) {
              $("#correct" + [i]).text(" Correct!");
-            //  console.log(true);
          }
      }
  });
-
-//  requiring our state from home.js to get language
-//  var gs = require('home.js');
-//  console.log(gs.state)
 
  // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
  $("#wordSearchBtn").on("click", function () {
