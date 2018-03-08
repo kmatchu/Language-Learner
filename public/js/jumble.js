@@ -1,3 +1,10 @@
+var game = sessionStorage.getItem("game");
+console.log(game);
+var language = sessionStorage.getItem("lang");
+console.log(language);
+var difficulty = sessionStorage.getItem("diff");
+console.log(difficulty);
+
  //  This section contains the array of words to scramble (wordArr) and then scrambles each word in the array (newWordArr)
  var wordArr = ["hola", "bien", "hablar", "escuchar", "aprender"];
  function shuffleWord(word) {
@@ -36,8 +43,8 @@
      event.preventDefault();
      $("#lookup").text("");
      var searchWord = $("#wordInput").val();
-     var langCode = "es"
-     queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=" + langCode + "-en";
+    //  var langCode = "es"
+     queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=" + language + "-en";
      $.ajax({
          url: queryURL,
          type: "GET",
