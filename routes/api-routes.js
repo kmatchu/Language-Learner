@@ -26,10 +26,56 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/french", function(req, res) {
-    db.French.findAll({}).then(function(dbWord) {
-      res.json(dbWord);
-    })
+  app.get("/api/:language?/:difficulty?", function(req, res) {
+    let difficulty = req.params.difficulty;
+
+    let language = req.params.language;
+    language = language[0].toUpperCase() + language.slice(1);
+    console.log(language);
+
+    if(difficulty) {
+      if(difficulty === "easy") {
+        db[language].findAll({
+          where: {
+            id: {
+              $between: [1, 100]
+            }
+          }
+        }).then(function(dbWord) {
+          res.json(dbWord);
+        });
+      }
+      else if(difficulty === "medium") {
+        db[language].findAll({
+          where: {
+            id: {
+              $between: [101, 300]
+            }
+          }
+        }).then(function(dbWord) {
+          res.json(dbWord);
+        });
+      }
+      else if(difficulty === "hard") {
+        db[language].findAll({
+          where: {
+            id: {
+              $between: [301, 600]
+            }
+          }
+        }).then(function(dbWord) {
+          res.json(dbWord);
+        });
+      }
+      else {
+        // TODO: 404 page
+      }
+    }
+    else {
+      db[language].findAll({}).then(function(dbWord) {
+        res.json(dbWord);
+      });
+    }
   });
 
   // POST route for saving a new user
