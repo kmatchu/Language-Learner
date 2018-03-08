@@ -4,18 +4,53 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 
 <body>
-
+    <div class="containter">
+        <div class="row">
+            <div class="col-xs-12"> Guess a Letter!</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="guessBlanks" type="text"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"> Number of guesses remaining</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="guessesRemain" type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"> Letters already Guessed</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="guessedLetters" type="text"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"> Wins</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="win"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"> Losses</div>
+            <div class="row">
+                <div class="col-xs-12" id="loss"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="js/hangman.js"></script>
 </body>
 
 </html>
