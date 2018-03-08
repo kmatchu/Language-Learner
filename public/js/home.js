@@ -18,22 +18,7 @@ var stateFun = (function () {
 
     $(document).on("click", "#playBtn", function () {
         if (!state.game || !state.language || !state.difficulty) {
-            console.log("please select a language, game, and difficulty level before proceeding")
-        }
-        else if (state.game === "jumble") {
-            $("#playBtn").attr("href", "jumble.html");
-            window.location.replace($("#playBtn").attr(("href")));
-            console.log("go 2 game");
-        }
-        else if (state.game === "ws") {
-            $("#playBtn").attr("href", "wordsearch.html");
-            // window.location.replace($("#playBtn").attr(("href")));
-            console.log("go 2 game")
-        }
-        else {
-            $("#playBtn").attr("href", "hangman.html");
-            // window.location.replace($("#playBtn").attr(("href")));
-            console.log("go 2 game")
+            alert("please select a language, game, and difficulty level before proceeding")
         }
         var urlLang;
         if (state.language === "fr") {
@@ -45,19 +30,35 @@ var stateFun = (function () {
         else {
             urlLang = "german"
         }
+        var positionArr = [];
+        var wordArr = [];
         $.get("api/" + urlLang + "/" + state.difficulty, function (data) {
-                console.log(data)
-                var positionArr = [];
-                for (var i = 0; i < 10; i++){
-                    positionArr[i] = Math.floor(Math.random() * Math.floor(100));
-                    // console.log(positionArr)
-                }
-                var wordArr = [];
-                for (var i = 0; i < 10; i++){
-                    wordArr[i] = data[positionArr[i]].Word
-                }
-                sessionStorage.setItem("wordArr", wordArr);
-        });
+            // console.log(data)
+            for (var i = 0; i < 10; i++){
+                positionArr[i] = Math.floor(Math.random() * Math.floor(100));
+                // console.log(positionArr)
+            }
+            for (var i = 0; i < 10; i++){
+                wordArr[i] = data[positionArr[i]].Word
+            }
+            sessionStorage.setItem("wordArr", wordArr);
+    }).done(function(){
+        if (state.game === "jumble") {
+            $("#playBtn").attr("href", "jumble.html");
+            window.location.replace($("#playBtn").attr(("href")));
+            // console.log("go 2 game");
+        }
+        else if (state.game === "ws") {
+            $("#playBtn").attr("href", "wordsearch.html");
+            window.location.replace($("#playBtn").attr(("href")));
+            // console.log("go 2 game")
+        }
+        else {
+            $("#playBtn").attr("href", "hangman.html");
+            window.location.replace($("#playBtn").attr(("href")));
+            // console.log("go 2 game")
+        }
+    });
     });
 })();
 
