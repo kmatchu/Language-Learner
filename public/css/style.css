@@ -1,11 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Bree+Serif|Dosis');
+
+body, html, .container {
+    background: #e2f6fc;
+    color: #252525;
+    height: 100%;
+    -webkit-text-size-adjust: auto;
+    -moz-text-size-adjust: auto;
+    font-family: 'Dosis', sans-serif;
+}
+
 .container{
     margin: 0 auto;
     padding: 20px;
     text-align: center;
 }
+
+.content {
+    text-align: justify;
+}
+
+#logo {
+    font-size: 80px;
+    font-weight: 600;
+    color: #000;
+    font-family: 'Bree Serif', serif;
+}
+
+.navbar-right {
+    font-size: 14px;
+    font-family: 'Abel', sans-serif;
+    font-weight: 600;
+}
+
+nav {
+    height: 100px;
+}
+
 .flag{
     width:100%
 }
+
 .searchdiv{
     border: 3px solid blue;
 }
@@ -14,9 +48,8 @@
         font-size: 48px;
         border: 1px solid black;
         height:72px;
-        text-align: center;}
-
-
+        text-align: center;
+}
 
 .highlight {background-color: salmon;}
 .correct   {background-color: lightblue;}
