@@ -36,33 +36,26 @@ module.exports = function(app) {
     if(difficulty) {
       if(difficulty === "easy") {
         db[language].findAll({
-          where: {
-            id: {
-              $between: [1, 100]
-            }
-          }
+          limit: 100,
+          order: [['FREQUENCY', 'DESC']]
         }).then(function(dbWord) {
           res.json(dbWord);
         });
       }
       else if(difficulty === "medium") {
         db[language].findAll({
-          where: {
-            id: {
-              $between: [101, 300]
-            }
-          }
+          limit: 100,
+          offset: 100,
+          order: [['FREQUENCY', 'DESC']]
         }).then(function(dbWord) {
           res.json(dbWord);
         });
       }
       else if(difficulty === "hard") {
         db[language].findAll({
-          where: {
-            id: {
-              $between: [301, 600]
-            }
-          }
+          limit: 100,
+          offset: 200,
+          order: [['FREQUENCY', 'DESC']]
         }).then(function(dbWord) {
           res.json(dbWord);
         });
@@ -72,7 +65,7 @@ module.exports = function(app) {
       }
     }
     else {
-      db[language].findAll({}).then(function(dbWord) {
+      db[language].findAll({order: [['FREQUENCY', 'DESC']]}).then(function(dbWord) {
         res.json(dbWord);
       });
     }
