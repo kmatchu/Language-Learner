@@ -14,17 +14,12 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // Get route for retrieving a single user
-  // app.get("/api/posts/:username", function(req, res) {
-  //   db.Login.findOne({
-  //     where: {
-  //       username: req.params.username
-  //     }
-  //   })
-  //   .then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+  // GET route for getting all of the logins
+  app.get("/api/login", function (req, res) {
+    db.Login.findAll({}).then(function (results) {
+      res.json(results);
+    });
+  });
 
   app.get("/api/:language?/:difficulty?", function(req, res) {
     let difficulty = req.params.difficulty;
@@ -72,15 +67,14 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new user
-  // app.post("/api/posts", function(req, res) {
-  //   console.log(req.body);
-  //   db.Login.create({
-  //     username: req.body.username,
-  //     password: req.body.password,
-  //   })
-  //   .then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
-
+  app.post("/api/login", function(req, res) {
+    console.log(req.body);
+    db.Login.create({
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password,
+    }).then(function(dbLogin) {
+      res.json(dbLogin);
+    });
+  });
 };

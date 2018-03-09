@@ -16,26 +16,46 @@
 
 <body>
     <div class="containter">
-        <form>
+        <form id="loginInfo">
             <input id="username" placeholder="username"> </input>
             <input id="email" placeholder="email address"> </input>
             <input id="password" placeholder="password"> </input>
-            <button id="submitLogin">Login</button>
+            <button id="submitLogin" type="submit">Login</button>
         </form>
-        <div id="test"></div>
-        <div id="test2"></div>
-        <div id="test3"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
-    <script>
-$("#submitLogin").on("click", function(){
+    <script type="text/javascript">
+
+  // Getting jQuery references to the post email, username, form, and password
+  var usernameInput = $("#username");
+  var emailInput = $("#email");
+  var passwordInput = $("#password");
+  var loginForm = $("#loginInfo");
+  // Adding an event listener for when the form is submitted
+  $(loginForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
-    $("#test").text($("#username").val());
-    $("#test2").text($("#email").val());
-    $("#test3").text($("#password").val());
+    // Wont submit the post if we are missing any fields
+    if (!usernameInput.val().trim() || !passwordInput.val().trim() || !emailInput.val().trim()) {
+      alert("please fill in all fields");
+        return;
+    }
+    // Constructing a newLogin object to hand to the database
+    var newLogin = {
+      email: emailInput.val().trim(),
+      username: usernameInput.val().trim(),
+      password: passwordInput.val()
+    };
+
+    console.log(newLogin);
+    submitPost(newLogin);
 });
+  // Submits a new post
+  function submitPost(Login) {
+    $.post("/api/login/", Login, function() {
+    });
+  }
     </script>
 </body>
 

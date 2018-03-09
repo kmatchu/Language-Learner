@@ -69,9 +69,9 @@ var begin = function (event) {
        $("#lookup").text("Translation: " + response.text[0])
        console.log(response.text[0])
        }
-       else{
-          $("#lookup").text("No translation found for: " + winWordRand)
-       }
+    //    else{
+    //       $("#lookup").text("No translation found for: " + winWordRand)
+    //    }
    }).catch(function (response){
       $("#lookup").text("No translation found")
    })
