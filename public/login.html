@@ -15,12 +15,15 @@
 </head>
 
 <body>
-    <div class="containter">
+    <div class="container">
+        <nav id="userInfo">
+
+        </nav>
         <form id="loginInfo">
             <input id="username" placeholder="username"> </input>
             <input id="email" placeholder="email address"> </input>
             <input id="password" placeholder="password"> </input>
-            <button id="submitLogin" type="submit">Login</button>
+            <button class="submitLogin" type="submit">Login</button>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -33,6 +36,7 @@
   var emailInput = $("#email");
   var passwordInput = $("#password");
   var loginForm = $("#loginInfo");
+  var loggedUser;
   // Adding an event listener for when the form is submitted
   $(loginForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
@@ -49,11 +53,25 @@
     };
 
     console.log(newLogin);
-    submitPost(newLogin);
+    // submitPost(newLogin);
+    findUser(newLogin);
 });
+
   // Submits a new post
   function submitPost(Login) {
     $.post("/api/login/", Login, function() {
+    });
+  }
+
+  function findUser(Login) {
+    $.get("/api/login/", Login, function(data) {
+        for(var i=0;i<data.length;i++){
+            if((data[i].username === Login.username) && (data[i].password === Login.password)){
+                console.log("Found");
+                $("#userInfo").text(Login.username);
+            }
+        }
+        
     });
   }
     </script>
