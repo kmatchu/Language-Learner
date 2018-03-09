@@ -53,13 +53,17 @@
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option">
-                                <a href="#">SIGN UP</a>
+                                <button type="button" class="btn btn-primary optionButton" data-toggle="modal" data-target="#loginModal">
+                                    SIGN UP
+                                </button>
                             </li>
                             <li id="option">
-                                <a href="/login">LOGIN</a>
+                                <button type="button" class="btn btn-primary optionButton" data-toggle="modal" data-target="#loginModal">
+                                    LOGIN
+                                </button>
                             </li>
                             <li id="option">
-                                <a href="/home">GUEST ACCESS</a>
+                                <a href="/home" data-toggle="modal" data-target="#loginModal">GUEST ACCESS</a>
                             </li>
                             <li id="option">
                                 <a href="#">ABOUT THE TEAM</a>
@@ -148,14 +152,38 @@
                                     <h3>A million ways to say 'Hello.'</h3>
                                     <hr>
                                     <p>
-                                        We may live far apart, but our words connect us. As the world connects more and more, never miss a chance for an adventure or a new friend. Grab a hold of life, take the dive, and try out a new language. The world will open to you - as long as you know how to say 'Hello!'</p>
+                                        We may live far apart, but our words connect us. As the world connects more and more, never miss a chance for an adventure
+                                        or a new friend. Grab a hold of life, take the dive, and try out a new language.
+                                        The world will open to you - as long as you know how to say 'Hello!'</p>
                                 </div>
                                 <div class="col-md-6">
                                     <h3>Learn quick - while having fun!</h3>
                                     <hr>
-                                    <p>The game rules are easy - but don't underestimate tackling a new language. You can adjust the difficulty, and check out new words each time you play a game. Children, students and adults all can enjoy games of jumble, wordsearch and hangman, with more games in future updates. 
+                                    <p>The game rules are easy - but don't underestimate tackling a new language. You can adjust
+                                        the difficulty, and check out new words each time you play a game. Children, students
+                                        and adults all can enjoy games of jumble, wordsearch and hangman, with more games
+                                        in future updates.
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>

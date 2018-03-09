@@ -9,6 +9,11 @@ body, html, .container {
     font-weight: 600;
 }
 
+h3 {
+    font-family: 'Bree Serif', serif;
+    text-transform: uppercase;
+}
+
 .container.fullPage {
     padding-top: 0;
 }
@@ -26,6 +31,41 @@ body {
     transition: 1s background;
     padding:inherit;
 } */
+
+.optionButton {
+    background: transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+    color: #777;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 20px;
+    border: 0;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover, 
+.open>.dropdown-toggle.btn-primary.focus, 
+.open>.dropdown-toggle.btn-primary:focus, 
+.open>.dropdown-toggle.btn-primary:hover {
+    background: transparent;
+    color: #333;
+    border: none;
+}
+
+.optionButton:visited,
+ {
+    background: transparent;
+    border: none;
+}
 
 .container{
     margin: 0 auto;
