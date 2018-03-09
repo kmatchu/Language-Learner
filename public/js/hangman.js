@@ -11,6 +11,8 @@ var losses = 0;
 var allGuess = [];
 var isMatch = false;
 
+
+
 var begin = function (event) {
     var guess = (event.key).toLowerCase();
     var isMatch = false;
@@ -47,10 +49,33 @@ var begin = function (event) {
             replace = wordDisplay.innerText = uArr.join(" ");
         }
     }
+
     $("#guessesRemain").text(lives);
     $("#win").text(wins);
     $("#loss").text(losses);
     $("#guessedLetters").text(allGuess);
+    // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
+//  $("#wordSearchBtn").on("click", function () {
+    // event.preventDefault();
+    // $("#lookup").text("");
+   var language = sessionStorage.getItem("lang");
+   queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + winWordRand + "&lang=" + language + "-en";
+   $.ajax({
+       url: queryURL,
+       type: "GET",
+       dataType: "json",
+   }).then(function (response) {
+       if(response.text[0] !== winWordRand){
+       $("#lookup").text("Translation: " + response.text[0])
+       console.log(response.text[0])
+       }
+    //    else{
+    //       $("#lookup").text("No translation found for: " + winWordRand)
+    //    }
+   }).catch(function (response){
+      $("#lookup").text("No translation found")
+   })
+// });
 }
 $("body").on("keyup", begin);
 
