@@ -156,12 +156,19 @@ $(document).on("click",".clicker", function(){
     $(this).addClass("highlight");
     for (var i=0;i<makeWordsSplit(useArr).length;i++){
         if(makeWordsSplit(useArr)[i].toString() === currentGuess.toString()){
-        $(".highlight").addClass("correct");
+        $(".highlight").addClass("correct").removeClass("clicker");
         displayArray.push(currentGuess.toString().replace(/,/g,""));
         $(".foundWords").text(displayArray.toString());
         currentGuess = [];
+        if(!$(".clicker").length){
+            $("#winWSModal").modal("show");;
+        };
         }
     }
+});
+
+$(document).on("click","#modalWSClose",function(){
+    $("#winWSModal").modal("hide");
 });
 
 $(document).on("click",".wrong",function(){
@@ -174,6 +181,3 @@ $(document).on("click",".highlight",function(){
     currentGuess = [];
 })
 
-// if($(".clicker") === $(".correct")){
-//     console.log("You win!");
-// };
