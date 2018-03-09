@@ -33,6 +33,7 @@ var begin = function (event) {
         winWordLetArr = winWordRand.split("");
         uArr = (winWordLetArr.fill(" _ ", 0));
         replace = wordDisplay.innerText = uArr.join(" ");
+        $("#winHMModal").modal("show");
     }
     if (!isMatch) {
         lives--;
@@ -52,3 +53,7 @@ var begin = function (event) {
     $("#guessedLetters").text(allGuess);
 }
 $("body").on("keyup", begin);
+
+$(document).on("click","modalHMClose",function(){
+    $("#winHMModal").modal("hide");
+})
