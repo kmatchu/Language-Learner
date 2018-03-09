@@ -18,11 +18,13 @@
     <div class="containter">
         <form>
             <input id="username" placeholder="username"> </input>
+            <input id="email" placeholder="email address"> </input>
             <input id="password" placeholder="password"> </input>
             <button id="submitLogin">Login</button>
         </form>
         <div id="test"></div>
         <div id="test2"></div>
+        <div id="test3"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -31,7 +33,8 @@
 $("#submitLogin").on("click", function(){
     event.preventDefault();
     $("#test").text($("#username").val());
-    $("#test2").text($("#password").val());
+    $("#test2").text($("#email").val());
+    $("#test3").text($("#password").val());
 });
     </script>
 </body>
