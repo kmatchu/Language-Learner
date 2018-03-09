@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Bree+Serif|Dosis');
 
 body, html, .container {
-    background: #99d3df;
     color: #252525;
     height: 100%;
     -webkit-text-size-adjust: auto;
     -moz-text-size-adjust: auto;
     font-family: 'Dosis', sans-serif;
     font-weight: 600;
+}
+
+.container.fullPage {
+    padding-top: 0;
+}
+
+body {
+    background: url("../images/bg3.png");
 }
 
 /* #option:hover {
@@ -26,13 +33,17 @@ body, html, .container {
     text-align: center;
 }
 
+.contentContainer {
+    border-top: 2px solid #FFB442;
+    border-bottom: 2px solid #FFB442;
+}
+
 .content {
     text-align: justify;
-    background: #b3e4f3;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 4px;
-    border: 1px solid #e7e7e7;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #logo {
@@ -49,6 +60,7 @@ body, html, .container {
     font-family: 'Dosis', sans-serif;
     text-transform: uppercase;
     text-align: left;
+    display: none;
 }
 
 .navbar.navbar-default {
@@ -62,7 +74,18 @@ body, html, .container {
     height: auto;
 }
 
-.navbar-right {
+.miscLinks {
+    font-size: 15px;
+    font-family: 'Abel', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 8px;
+    margin-right: 25px;
+}
+
+.links {
     font-size: 15px;
     font-family: 'Abel', sans-serif;
     font-weight: 600;
@@ -89,7 +112,8 @@ body, html, .container {
 }
 
 .nav-tabs.nav-justified {
-    padding-bottom: 15px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     padding-top: 15px;
     list-style: none;
 }
@@ -121,11 +145,12 @@ body, html, .container {
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 30px;
+    border-top: 8px solid #FFB442;
+    border-bottom: 8px solid #FFB442;
 }
 
 .carousel-inner {
     margin: auto;
-    border: 1px solid #e7e7e7;
     width: auto;
     height: auto;
 }
