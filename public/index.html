@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!-- <script src="main.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -28,23 +31,26 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="col-xs-12 phone-nav">
-                            <a class="navbar-brand" href="#" id="logo">uLEARN</a>
+                            <p>
+                                <a class="navbar-brand" href="#" id="logo">uLEARN</a>
+                            </p>
+                            <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                            <li>
+                            <li id="option">
                                 <a href="#">SIGN UP</a>
                             </li>
-                            <li>
+                            <li id="option">
                                 <a href="#">LOGIN</a>
                             </li>
-                            <li>
+                            <li id="option">
                                 <a href="#">GUEST ACCESS</a>
                             </li>
-                            <li>
+                            <li id="option">
                                 <a href="#">ABOUT THE TEAM</a>
                             </li>
                         </ul>
@@ -53,21 +59,82 @@
                 </div>
             </div>
         </nav>
-        <!-- /.container-fluid -->
-        <div class="wrap">
-            <div class="container mainContent">
+        <div class="wrap mainContent">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="navbar-header">
-                        <div class="col-md-12">
-                            <h1 class="title-header">uLEARN</h1>
-                            <hr>
+                    <div class="title-header">
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul class="nav-tabs nav-justified">
+                                <li id="flag">
+                                    <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" />
+                                </li>
+                            </ul>
                         </div>
-                        </article>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <div class="col-md-10 col-md-offset-1">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 carouselRow">
+                        <!-- Courtesy of https://www.w3schools.com/bootstrap/bootstrap_carousel.asp -->
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="images/carousel1.jpg" alt="Visit the amazing Louvre today!" title="Visit the amazing Louvre today!">
+                                </div>
+
+                                <div class="item">
+                                    <img src="images/carousel2.jpg" alt="Take a trip to Spain!" title="Take a trip to Spain!">
+                                </div>
+
+                                <div class="item">
+                                    <img src="images/carousel3.jpg" alt="Take a stroll through Germany" title="Take a stroll through Germany">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>LOREM IPSUM</h3>
+                                    <hr>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         At lectus urna duis convallis convallis tellus. Habitasse platea dictumst vestibulum
@@ -81,27 +148,20 @@
                                         tempus iaculis urna id volutpat lacus laoreet. Malesuada pellentesque elit eget gravida.
                                         Nec feugiat nisl pretium fusce id. Augue interdum velit euismod in pellentesque.
                                         Pretium vulputate sapien nec sagittis aliquam malesuada. </p>
-
-                                    <p>
-                                        Cras semper auctor neque vitae tempus quam pellentesque. Gravida arcu ac tortor dignissim convallis aenean. At ultrices mi
-                                        tempus imperdiet nulla malesuada pellentesque elit eget. Semper eget duis at tellus
-                                        at urna condimentum mattis. Dui nunc mattis enim ut tellus. Nullam non nisi est sit
-                                        amet. Pulvinar sapien et ligula ullamcorper malesuada. Tincidunt eget nullam non
-                                        nisi est. At urna condimentum mattis pellentesque. Amet justo donec enim diam. Nulla
-                                        facilisi etiam dignissim diam quis enim lobortis. Mauris augue neque gravida in fermentum
-                                        et.
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-6">
+                                    <h3>MOAR IPSUM</h3>
+                                    <hr>
+                                    <p>Cras semper auctor neque vitae tempus quam pellentesque. Gravida arcu ac tortor dignissim
+                                        convallis aenean. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit
+                                        eget. Semper eget duis at tellus at urna condimentum mattis. Dui nunc mattis enim
+                                        ut tellus. Nullam non nisi est sit amet. Pulvinar sapien et ligula ullamcorper malesuada.
+                                        Tincidunt eget nullam non nisi est. At urna condimentum mattis pellentesque. Amet
+                                        justo donec enim diam. Nulla facilisi etiam dignissim diam quis enim lobortis. Mauris
+                                        augue neque gravida in fermentum et.
                                     </p>
-
-                                    <p>
-                                        Laoreet sit amet cursus sit amet dictum. Etiam non quam lacus suspendisse. Pellentesque elit ullamcorper dignissim cras tincidunt
-                                        lobortis. At lectus urna duis convallis convallis tellus. Pharetra pharetra massa
-                                        massa ultricies mi quis hendrerit dolor. Tempus iaculis urna id volutpat lacus laoreet
-                                        non curabitur. Sit amet purus gravida quis blandit. In hac habitasse platea dictumst
-                                        quisque sagittis purus. Bibendum ut tristique et egestas quis. Luctus accumsan tortor
-                                        posuere ac ut consequat. Tellus id interdum velit laoreet id donec ultrices. Fermentum
-                                        leo vel orci porta non. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque
-                                        pulvinar pellentesque. Mauris pellentesque pulvinar pellentesque habitant morbi tristique
-                                        senectus. Fermentum leo vel orci porta non.</p>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +169,7 @@
                 </div>
             </div>
         </div>
+
 
 </body>
 
