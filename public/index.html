@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
                         </button>
                         <div class="col-xs-12 phone-nav">
                             <p>
-                                <a class="navbar-brand" href="#" id="logo">uLEARN</a>
+                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
                             </p>
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
@@ -52,13 +53,22 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                            <li id="option">
-                                <a href="#">SIGN UP</a>
+                            <li id="option" class="welcomemsg">
+                                <span id="userGreeting">
+                                    <a href="home.html">WELCOME
+                                        <label id="userInfo"></label>
+                                    </a>
+                                </span>
                             </li>
-                            <li id="option">
-                                <a href="/login">LOGIN</a>
+                            <li id="option" class="signuplink">
+                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                    SIGN UP
+                                </a>
                             </li>
-                            <li id="option">
+                            <li id="option" class="loginlink">
+                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                            </li>
+                            <li id="option" class="guestlink">
                                 <a href="/home">GUEST ACCESS</a>
                             </li>
                             <li id="option">
@@ -165,6 +175,93 @@
                         </div>
                     </div>
                 </div>
+                <!-- LOGIN MODAL -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left login-form" id="loginInfo">
+                                        <div class="user-form-group">
+                                            <input id="loginusername" type="text" class="form-control" placeholder="USERNAME">
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input id="loginpassword" type="password" class="form-control" placeholder="PASSWORD">
+                                        </div>
+                                        <div>
+                                            <p id="loginerror" class="error">&nbsp;</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary loginSubmit">LOGIN</button>
+                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SIGNUP MODAL -->
+                <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="signupModalLabel">Sign Up for an account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left signup-form">
+                                        <div class="user-form-group">
+                                            <input type="text" class="form-control" placeholder="USERNAME">
+                                            <p class="error">
+                                                <label id="sunamerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="email-form-group">
+                                            <input type="text" class="form-control" placeholder="EMAIL">
+                                            <p class="error">
+                                                <label id="suemailerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input type="password" class="form-control" placeholder="PASSWORD">
+                                            <p class="error">
+                                                <label id="supwderr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="rptpwd-form-group">
+                                            <input type="password" class="form-control" placeholder="REPEAT PASSWORD">
+                                            <p class="error">
+                                                <label id="supwdrpterr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary signupSubmit" data-dismiss="modal">SIGN UP</button>
+                                <button type="button" class="btn btn-seconday guest">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 footer">
+                        Copright© 2018 uLearn
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

@@ -9,23 +9,27 @@ body, html, .container {
     font-weight: 600;
 }
 
+h3, h4, h5 {
+    font-family: 'Bree Serif', serif;
+    text-transform: uppercase;
+}
+
+a, a:visited {
+    color: #777;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
 .container.fullPage {
     padding-top: 0;
 }
 
 body {
-    background: url("../images/bg3.png");
+    background: url("../images/bg.png");
 }
-
-/* #option:hover {
-    background-color: #99d3df;
-    border-radius: 4px;
-    border-top: 1px solid #e7e7e7;
-    border-left: 1px solid #e7e7e7;
-    border-right: 1px solid #e7e7e7;
-    transition: 1s background;
-    padding:inherit;
-} */
 
 .container{
     margin: 0 auto;
@@ -101,6 +105,23 @@ body {
     right: 0;
 }
 
+#userGreeting {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height:20px;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-top: 5px;
+    cursor: default;
+}
+
+#userInfo {
+    font-weight: 800;
+    color: #FFB442;
+    text-transform: uppercase;
+}
+
 .wrap.mainContent {
     border-radius: 4px;
     border-top-left-radius: 0;
@@ -129,10 +150,11 @@ body {
 }
 
 #flag > img {
-    border: 1px solid #252525;
+    /* border: 1px solid #252525;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
-    box-shadow: 1px 1px 4px 1px #252525;
+    box-shadow: 1px 1px 4px 1px #252525; */
     margin-bottom: 10px;
+    background: transparent;
 }
 
 .carouselRow {
@@ -153,6 +175,84 @@ body {
     margin: auto;
     width: auto;
     height: auto;
+}
+
+.modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.login-form, .signup-form {
+    width: 100%;
+}
+
+.user-form-group,
+.email-form-group,
+.pwd-form-group,
+.rptpwd-form-group {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.user-form-group > p,
+.email-form-group > p,
+.pwd-form-group > p,
+.rptpwd-form-group > p {
+    margin: 0;
+}
+
+.user-form-group > input[type=text],
+.email-form-group > input[type=text],
+.rptpwd-form-group > input[type=password],
+.pwd-form-group > input[type=password] {
+    width: 90%;
+}
+
+.loginSubmit, .guest, .signupSubmit {
+    font-weight: 600;
+}
+
+.loginSubmit, .signupSubmit {
+    color: #252525;
+    background: #FFB442;
+}
+
+.loginSubmit:hover,
+.loginSubmit:visited,
+.loginSubmit:focus,
+.loginSubmit.focus,
+.loginSubmit.active.focus, 
+.loginSubmit.active:focus, 
+.loginSubmit.active:hover, 
+.loginSubmit:active.focus, 
+.loginSubmit:active:focus, 
+.loginSubmit:active:hover,
+.signupSubmit:hover,
+.signupSubmit:visited,
+.signupSubmit:focus,
+.signupSubmit.focus,
+.signupSubmit.active.focus, 
+.signupSubmit.active:focus, 
+.signupSubmit.active:hover, 
+.signupSubmit:active.focus, 
+.signupSubmit:active:focus, 
+.signupSubmit:active:hover
+ {
+    background: rgb(185, 140, 71);
+}
+
+.error {
+    color:#d44b4b;
+}
+
+.footer {
+    height: 40px;
+    padding-top: 15px;
+    margin-bottom: 15px;
 }
 
 .flag{

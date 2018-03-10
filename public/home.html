@@ -4,73 +4,243 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title>Welcome to uLearn: Your person Language companion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/home.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row" id="language">
-            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="fr">
-                <img class="flag" src="css/images/french-flag.png" alt="french-flag">
-            </button>
+    <div class="container fullPage">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="col-xs-12 phone-nav">
+                            <p>
+                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
+                            </p>
+                            <p id="logo-subtext">Your personal language companion</p>
+                        </div>
+                    </div>
+                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option">
+                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="es">
-                <img class="flag" src="css/images/spain-flag.png" alt="spain-flag">
-            </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option" class="welcomemsg">
+                                <span id="userGreeting">
+                                    <a href="home.html">WELCOME <label id="userInfo"></label>
+                                    </a>
+                                </span>
+                            </li>
+                            <li id="option" class="signuplink">
+                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                    SIGN UP
+                                </a>
+                            </li>
+                            <li id="option" class="loginlink">
+                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                            </li>
+                            <li id="option" class="guestlink">
+                                <a href="/home">GUEST ACCESS</a>
+                            </li>
+                            <li id="option">
+                                <a href="#">ABOUT THE TEAM</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </nav>
+        <div class="wrap mainContent">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="title-header">
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul class="nav-tabs nav-justified">
+                                <li id="flag">
+                                    <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" />
+                                </li>
+                                <li id="flag">
+                                    <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 contentContainer">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>LOREM IPSUM</h3>
+                                    <hr>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Amet consectetur adipiscing elit ut aliquam purus. Non consectetur a erat nam at
+                                        lectus urna duis. Pellentesque sit amet porttitor eget dolor morbi non. Ac tortor
+                                        vitae purus faucibus ornare. Nunc sed blandit libero volutpat sed cras ornare arcu.
+                                        Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Aliquet nibh praesent
+                                        tristique magna sit. Velit scelerisque in dictum non consectetur a erat nam at. Semper
+                                        viverra nam libero justo laoreet sit amet. Justo laoreet sit amet cursus sit amet
+                                        dictum sit. Et ultrices neque ornare aenean euismod elementum nisi. Nisl tincidunt
+                                        eget nullam non.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>MOAR IPSUM</h3>
+                                    <hr>
+                                    <p>Faucibus turpis in eu mi bibendum neque egestas congue quisque. Sociis natoque penatibus
+                                        et magnis dis parturient montes nascetur ridiculus. Lacus vel facilisis volutpat
+                                        est velit egestas dui. Pharetra et ultrices neque ornare aenean euismod elementum.
+                                        Id aliquet lectus proin nibh nisl condimentum. Viverra nam libero justo laoreet sit
+                                        amet cursus sit amet. Orci a scelerisque purus semper eget duis at tellus at. Mauris
+                                        augue neque gravida in fermentum et sollicitudin ac orci. Sapien eget mi proin sed
+                                        libero enim. Massa placerat duis ultricies lacus. In ante metus dictum at tempor.
+                                        At auctor urna nunc id cursus metus aliquam eleifend. Donec enim diam vulputate ut
+                                        pharetra sit. Neque sodales ut etiam sit amet nisl purus. Suspendisse ultrices gravida
+                                        dictum fusce ut placerat orci nulla. Eu non diam phasellus vestibulum lorem sed risus
+                                        ultricies.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LOGIN MODAL -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left login-form">
+                                        <div class="user-form-group">
+                                            <input type="text" class="form-control" placeholder="USERNAME">
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input type="password" class="form-control" placeholder="PASSWORD">
+                                        </div>
+                                        <div>
+                                            <p id="loginerror" class="error">&nbsp;</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary loginSubmit" data-dismiss="modal">LOGIN</button>
+                                <button type="button" class="btn btn-seconday guest">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SIGNUP MODAL -->
+                <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="signupModalLabel">Sign Up for an account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left signup-form">
+                                        <div class="user-form-group">
+                                            <input type="text" class="form-control" placeholder="USERNAME">
+                                            <p class="error">
+                                                <label id="sunamerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="email-form-group">
+                                            <input type="text" class="form-control" placeholder="EMAIL">
+                                            <p class="error">
+                                                <label id="suemailerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input type="password" class="form-control" placeholder="PASSWORD">
+                                            <p class="error">
+                                                <label id="supwderr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="rptpwd-form-group">
+                                            <input type="password" class="form-control" placeholder="REPEAT PASSWORD">
+                                            <p class="error">
+                                                <label id="supwdrpterr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary signupSubmit" data-dismiss="modal">SIGN UP</button>
+                                <button type="button" class="btn btn-seconday guest">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 footer">
+                        Copright© 2018 uLearn
+                    </div>
+                </div>
 
 
-            <button class="col-xs-12 col-sm-4 col-md-4 col-lg-4 lang" value="de">
-                <img class="flag" src="css/images/germany-flag.png" alt="germany-flag">
-            </button>
-
+            </div>
         </div>
-        <div class="row" id="game">
-            <div class="col-xs-4">
-                <button class="col-xs-12 game" value="jumble">
-                    jumbimg here
-                </button>
-            </div>
-            <div class="col-xs-4">
-                <button class="col-xs-12 game" value="ws">
-                    wsimg here
-                </button>
-            </div>
-            <div class="col-xs-4">
-                <button class="col-xs-12 game" value="hangman">
-                    hangimg here
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                <button class="diff" value="easy">Easy</button>
-            </div>
-            <div class="col-xs-4">
-                <button class="diff" value="medium">Medium</button>
-            </div>
-            <div class="col-xs-4">
-                <button class="diff" value="hard">Hard</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <button id="playBtn"> Play!</button>
-            </div>
-        </div>
-
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/home.js">
 
-    </script>
+
 </body>
 
 </html>

@@ -5,10 +5,10 @@ module.exports = function(sequelize, Sequelize) {
 
 // Creates a "Login" model that matches up with DB
 var Login = sequelize.define("Login", {
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
+  // email: {
+  //   type: Sequelize.STRING,
+  //   allowNull: false,
+  // },
   username: {
     type: Sequelize.STRING,
     allowNull: false,
