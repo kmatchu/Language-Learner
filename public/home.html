@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
@@ -55,7 +55,8 @@
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">WELCOME <label id="userInfo"></label>
+                                    <a href="home.html">WELCOME
+                                        <label id="userInfo"></label>
                                     </a>
                                 </span>
                             </li>
@@ -82,71 +83,107 @@
         </nav>
         <div class="wrap mainContent">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row langSelection">
                     <div class="title-header">
+                        <div class="col-md-10 col-md-offset-1 languageHeader">
+                            PICK THE LANGUAGE YOU WANT TO LEARN TODAY:
+                        </div>
+
                         <div class="col-md-10 col-md-offset-1">
                             <ul class="nav-tabs nav-justified">
-                                <li id="flag">
-                                    <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" />
+                                <li id="french" class="lang" value="fr">
+                                    <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" />
+                                <li id="spanish" class="lang" value="es">
+                                    <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" />
+                                <li id="german" class="lang" value="de">
+                                    <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" />
+                                <li id="afrikaans" class="lang" value="af">
+                                    <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" />
+                                <li id="portugese" class="lang" value="pt">
+                                    <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" />
+                                <li id="hungarian" class="lang" value="hu">
+                                    <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" class="unselected" />
                                 </li>
-                                <li id="flag">
-                                    <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" />
+                                <li id="dutch" class="lang" value="nl">
+                                    <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" class="unselected" />
                                 </li>
                             </ul>
                         </div>
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 id="langtitle">&nbsp;</h3>
+                            <hr id="langhr">
+                            <p id="langdescr"></p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-12 contentContainer">
                         <div class="content">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <h3>LOREM IPSUM</h3>
-                                    <hr>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Amet consectetur adipiscing elit ut aliquam purus. Non consectetur a erat nam at
-                                        lectus urna duis. Pellentesque sit amet porttitor eget dolor morbi non. Ac tortor
-                                        vitae purus faucibus ornare. Nunc sed blandit libero volutpat sed cras ornare arcu.
-                                        Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Aliquet nibh praesent
-                                        tristique magna sit. Velit scelerisque in dictum non consectetur a erat nam at. Semper
-                                        viverra nam libero justo laoreet sit amet. Justo laoreet sit amet cursus sit amet
-                                        dictum sit. Et ultrices neque ornare aenean euismod elementum nisi. Nisl tincidunt
-                                        eget nullam non.</p>
+                                <div class="col-md-10 col-md-offset-1 gameHeader">
+                                    CHOOSE A GAME TO PLAY:
                                 </div>
-                                <div class="col-md-6">
-                                    <h3>MOAR IPSUM</h3>
-                                    <hr>
-                                    <p>Faucibus turpis in eu mi bibendum neque egestas congue quisque. Sociis natoque penatibus
-                                        et magnis dis parturient montes nascetur ridiculus. Lacus vel facilisis volutpat
-                                        est velit egestas dui. Pharetra et ultrices neque ornare aenean euismod elementum.
-                                        Id aliquet lectus proin nibh nisl condimentum. Viverra nam libero justo laoreet sit
-                                        amet cursus sit amet. Orci a scelerisque purus semper eget duis at tellus at. Mauris
-                                        augue neque gravida in fermentum et sollicitudin ac orci. Sapien eget mi proin sed
-                                        libero enim. Massa placerat duis ultricies lacus. In ante metus dictum at tempor.
-                                        At auctor urna nunc id cursus metus aliquam eleifend. Donec enim diam vulputate ut
-                                        pharetra sit. Neque sodales ut etiam sit amet nisl purus. Suspendisse ultrices gravida
-                                        dictum fusce ut placerat orci nulla. Eu non diam phasellus vestibulum lorem sed risus
-                                        ultricies.
-                                    </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 gameSel">
+                                    <div class="col-md-4">
+                                        <figure class="figure">
+                                            <img class="figure-img img-fluid rounded game unclicked" id="hangman" value="hangman" />
+                                            <figcaption class="figure-caption text-center">HANGMAN</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <figure class="figure">
+                                            <img class="figure-img img-fluid rounded game unclicked" id="jumble" value="jumble" />
+                                            <figcaption class="figure-caption text-center">JUMBLE</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <figure class="figure">
+                                            <img class="figure-img img-fluid rounded game unclicked" id="ws" value="ws" />
+                                            <figcaption class="figure-caption text-center">WORDSEARCH</figcaption>
+                                        </figure>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 diffHeader">
+                                    PICK A DIFFICULTY:
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 diffSel">
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary diff" id="easy" value="easy">EASY</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary diff" id="medium" value="medium">MEDIUM</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary diff" id="hard" value="hard">HARD</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1 playHeader">
+                                        <img id="playBtn" />
+                                    </div>                                    
+                                </div>
+                                <div class="row">
+                                    <div class="gameErr"></div>
+                                </div>
                     </div>
                 </div>
                 <!-- LOGIN MODAL -->
@@ -236,9 +273,9 @@
                 </div>
 
 
+
             </div>
         </div>
-    </div>
 
 
 </body>

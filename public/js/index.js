@@ -1,6 +1,10 @@
 $(document).ready(function () {
     var loginForm = $("#loginInfo");
 
+    // $(".item").on("click", function() {
+    //     $(".carousel").carousel("pause");
+    // });
+
     function hideLinks() {
         // USER DATA exists in localstorage
         if (localStorage.getItem("user") !== null) {

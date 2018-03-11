@@ -47,7 +47,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #logo {
@@ -133,9 +133,10 @@ body {
 }
 
 .nav-tabs.nav-justified {
-    padding-bottom: 0;
     margin-bottom: 0;
     padding-top: 15px;
+    padding-bottom: 0;
+    padding-left: 0;
     list-style: none;
 }
 
@@ -149,12 +150,133 @@ body {
     color: inherit;
 }
 
-#flag > img {
+.lang > img {
     /* border: 1px solid #252525;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
     box-shadow: 1px 1px 4px 1px #252525; */
     margin-bottom: 10px;
-    background: transparent;
+    background: transparent;    
+    -webkit-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+.langSelection .lang > img  {
+    cursor: pointer;
+}
+
+.lang > img:hover {
+    opacity: 1.0;
+    -webkit-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+.selected {
+    opacity: 1.0;
+}
+
+.unselected {
+    opacity: 0.5;
+}
+
+.langSelection {
+    padding-bottom: 15px;
+}
+
+.languageHeader, .gameHeader, .diffHeader, .playHeader {
+    border-top: 8px solid #FFB442;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+#langdescr {
+    text-align: justify;
+}
+
+#langtitle, .gameHeader, .diffHeader, .playHeader  {
+    text-align: center;
+}
+
+#langtitle {
+    margin-top: 5px;
+}
+
+#langhr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.diffHeader, .playHeader  {
+    margin-bottom: 10px;
+}
+
+.game {
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #252525;
+    background-image: url("../images/placeholder.jpg");
+    cursor: pointer;
+}
+
+.game:hover {
+    border: 2px inset #FFB442;
+    -webkit-box-shadow: 1px 1px 4px 1px #252525;
+    box-shadow: 1px 1px 4px 1px #252525;
+}
+
+.clicked {
+    border: 2px inset #FFB442;
+    -webkit-box-shadow: 1px 1px 4px 1px #252525;
+    box-shadow: 1px 1px 4px 1px #252525;
+}
+
+.unclicked {
+    border: 1px solid #252525;
+}
+
+.figure {
+    margin-top: 10px;
+}
+
+.gameSel, .diffSel {
+    text-align: center;
+}
+
+.diff {
+    color: #252525;
+    background: #FFB442;
+    font-weight: 600;
+}
+
+.chosen {
+    color: #fff;
+    background: rgb(255, 179, 65);
+}
+
+.unchosen {
+    color: #252525;
+    background: #FFB442;
+}
+
+.playHeader a {
+    text-decoration: none;
+    border: none;
+}
+
+#playBtn {
+    width: 75px;
+    height: 87px;
+    border: none;
+    border-top-color: #fff;
+    background-image: url("../images/playbtn.png");
+    cursor: pointer;
+}
+
+#playBtn:hover,
+#playBtn:focus,
+#playBtn:active {
+    background-image: url("../images/playbtnhover.png");
 }
 
 .carouselRow {
@@ -240,13 +362,27 @@ body {
 .signupSubmit.active:hover, 
 .signupSubmit:active.focus, 
 .signupSubmit:active:focus, 
-.signupSubmit:active:hover
+.signupSubmit:active:hover,
+.diff:hover,
+.diff:visited,
+.diff:focus,
+.diff.focus,
+.diff.active.focus, 
+.diff.active:focus, 
+.diff.active:hover, 
+.diff:active.focus, 
+.diff:active:focus, 
+.diff:active:hover
  {
-    background: rgb(185, 140, 71);
+    background: rgb(255, 179, 65);
 }
 
-.error {
+.error, .gameErr {
     color:#d44b4b;
+}
+
+.gameErr {
+    text-align: center;
 }
 
 .footer {
