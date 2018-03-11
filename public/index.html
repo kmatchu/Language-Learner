@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container fullPage">
         <nav class="navbar navbar-default">
             <div class="container-fluid navbar-custom">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,22 +34,41 @@
                         </button>
                         <div class="col-xs-12 phone-nav">
                             <p>
-                                <a class="navbar-brand" href="#" id="logo">uLEARN</a>
+                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
                             </p>
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option">
-                                <a href="#">SIGN UP</a>
+                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                                </a>
                             </li>
-                            <li id="option">
-                                <a href="/login">LOGIN</a>
+                        </ul>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option" class="welcomemsg">
+                                <span id="userGreeting">
+                                    <a href="home.html">WELCOME
+                                        <label id="userInfo"></label>
+                                    </a>
+                                </span>
                             </li>
-                            <li id="option">
+                            <li id="option" class="signuplink">
+                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                    SIGN UP
+                                </a>
+                            </li>
+                            <li id="option" class="loginlink">
+                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                            </li>
+                            <li id="option" class="guestlink">
                                 <a href="/home">GUEST ACCESS</a>
                             </li>
                             <li id="option">
@@ -55,6 +76,7 @@
                             </li>
                         </ul>
                     </div>
+
                     <!-- /.navbar-collapse -->
                 </div>
             </div>
@@ -65,25 +87,25 @@
                     <div class="title-header">
                         <div class="col-md-10 col-md-offset-1">
                             <ul class="nav-tabs nav-justified">
-                                <li id="flag">
+                                <li id="french" class="lang">
                                     <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="spanish" class="lang">
                                     <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="german" class="lang">
                                     <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="afrikaans" class="lang">
                                     <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="portugese" class="lang">
                                     <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="hungarian" class="lang">
                                     <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" />
                                 </li>
-                                <li id="flag">
+                                <li id="dutch" class="lang">
                                     <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" />
                                 </li>
                             </ul>
@@ -93,7 +115,7 @@
                 <div class="row">
                     <div class="col-md-12 carouselRow">
                         <!-- Courtesy of https://www.w3schools.com/bootstrap/bootstrap_carousel.asp -->
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div id="locCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -104,11 +126,11 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="images/carousel1.jpg" alt="Visit the amazing Louvre today!" title="Visit the amazing Louvre today!">
+                                    <img src="images/carousel1.jpg" alt="Take a trip to Spain!" title="Take a trip to Spain!">
                                 </div>
 
                                 <div class="item">
-                                    <img src="images/carousel2.jpg" alt="Take a trip to Spain!" title="Take a trip to Spain!">
+                                    <img src="images/carousel2.jpg" alt="Visit the amazing Louvre today!" title="Visit the amazing Louvre today!">
                                 </div>
 
                                 <div class="item">
@@ -129,46 +151,120 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 contentContainer">
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3>LOREM IPSUM</h3>
+                                    <h3>A million ways to say 'Hello.'</h3>
                                     <hr>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        At lectus urna duis convallis convallis tellus. Habitasse platea dictumst vestibulum
-                                        rhoncus est pellentesque elit ullamcorper. Risus quis varius quam quisque. Pulvinar
-                                        sapien et ligula ullamcorper malesuada proin libero nunc consequat. Varius duis at
-                                        consectetur lorem donec. Augue neque gravida in fermentum et sollicitudin. In nisl
-                                        nisi scelerisque eu ultrices. Cras ornare arcu dui vivamus arcu felis bibendum ut.
-                                        Ullamcorper morbi tincidunt ornare massa eget egestas. Condimentum vitae sapien pellentesque
-                                        habitant. Ipsum dolor sit amet consectetur adipiscing elit duis tristique. Sit amet
-                                        cursus sit amet dictum sit. Tristique nulla aliquet enim tortor at auctor urna. Morbi
-                                        tempus iaculis urna id volutpat lacus laoreet. Malesuada pellentesque elit eget gravida.
-                                        Nec feugiat nisl pretium fusce id. Augue interdum velit euismod in pellentesque.
-                                        Pretium vulputate sapien nec sagittis aliquam malesuada. </p>
+                                        We may live far apart, but our words connect us. As the world connects more and more, never miss a chance for an adventure
+                                        or a new friend. Grab a hold of life, take the dive, and try out a new language.
+                                        The world will open to you - as long as you know how to say 'Hello!'</p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-6">
-                                    <h3>MOAR IPSUM</h3>
+                                <div class="col-md-6">
+                                    <h3>Learn quick - while having fun!</h3>
                                     <hr>
-                                    <p>Cras semper auctor neque vitae tempus quam pellentesque. Gravida arcu ac tortor dignissim
-                                        convallis aenean. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit
-                                        eget. Semper eget duis at tellus at urna condimentum mattis. Dui nunc mattis enim
-                                        ut tellus. Nullam non nisi est sit amet. Pulvinar sapien et ligula ullamcorper malesuada.
-                                        Tincidunt eget nullam non nisi est. At urna condimentum mattis pellentesque. Amet
-                                        justo donec enim diam. Nulla facilisi etiam dignissim diam quis enim lobortis. Mauris
-                                        augue neque gravida in fermentum et.
+                                    <p>The game rules are easy - but don't underestimate tackling a new language. You can adjust
+                                        the difficulty, and check out new words each time you play a game. Children, students
+                                        and adults all can enjoy games of jumble, wordsearch and hangman, with more games
+                                        in future updates.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- LOGIN MODAL -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left login-form" id="loginInfo">
+                                        <div class="user-form-group">
+                                            <input id="loginusername" type="text" class="form-control" placeholder="USERNAME">
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input id="loginpassword" type="password" class="form-control" placeholder="PASSWORD">
+                                        </div>
+                                        <div>
+                                            <p id="loginerror" class="error">&nbsp;</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary loginSubmit">LOGIN</button>
+                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SIGNUP MODAL -->
+                <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="signupModalLabel">Sign Up for an account</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="navbar-form navbar-left signup-form">
+                                        <div class="user-form-group">
+                                            <input type="text" class="form-control" placeholder="USERNAME">
+                                            <p class="error">
+                                                <label id="sunamerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="email-form-group">
+                                            <input type="text" class="form-control" placeholder="EMAIL">
+                                            <p class="error">
+                                                <label id="suemailerr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="pwd-form-group">
+                                            <input type="password" class="form-control" placeholder="PASSWORD">
+                                            <p class="error">
+                                                <label id="supwderr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                        <div class="rptpwd-form-group">
+                                            <input type="password" class="form-control" placeholder="REPEAT PASSWORD">
+                                            <p class="error">
+                                                <label id="supwdrpterr">&nbsp;</label>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary signupSubmit" data-dismiss="modal">SIGN UP</button>
+                                <button type="button" class="btn btn-seconday guest">CONTINUE AS GUEST</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 footer">
+                        Copright© 2018 uLearn
+                    </div>
+                </div>
+
+
             </div>
         </div>
+    </div>
 
 
 </body>
