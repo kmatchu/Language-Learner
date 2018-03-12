@@ -17,7 +17,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <style>
         .content {
-            font-size: 30px;
+            font-size: 20px;
             text-align: center;
         }
 
@@ -26,12 +26,12 @@
             margin: 40px 0 30px 0;
         }
 
-        .modal {
+        /* .modal {
             background-color: whitesmoke;
             height: 50%;
             width: 60%;
             left: 20%;
-        }
+        } */
     </style>
 </head>
 
@@ -72,7 +72,7 @@
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">WELCOME
+                                    <a href="home.html">RETURN TO HOME
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
@@ -102,18 +102,20 @@
             <div class="container-fluid">
                 <div class="row gameTopHeader">
                     <div class="title-header">
-                        <div class="col-md-10 col-md-offset-1 gameTitleHeader">
+                        <!-- <div class="col-md-10 col-md-offset-1 gameTitleHeader">
                             <a href="/home.html">
                                 << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-10 col-md-offset-1">
                             <h3 id="gametitle">HANGMAN</h3>
                             <hr id="gamehr">
-                            <p id="gamedescr">JUMBLE DESCRIPTION GOES HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit
-                                ut aliquam purus. Non consectetur a erat nam at lectus urna duis. Pellentesque sit amet porttitor
-                                eget dolor morbi non.</p>
+                            <p id="gamedescr">HOW TO PLAY: The blank spaces below represent a word. A rough translation of
+                                that word is provided for you. In order to play, press a letter on your keyboard. If the
+                                guessed letter appears in the word, it will display in place of the appropriate blank. If that letter
+                                does not appear in the word, your guesses remaining will decrement by one. If you guess all
+                                the missing letters correctly, your wins increase by one. If you run out of remaining guesses,
+                                your losses increase by one. Once you have reached 10 wins, you have completed the level!</p>
                         </div>
                     </div>
                 </div>
@@ -121,9 +123,6 @@
                 <div class="row">
                     <div class="col-md-12 contentContainer">
                         <div class="content">
-                            <div class="row">
-                                <div class="col-xs-12 head"> Guess a Letter!</div>
-                            </div>
                             <div class="row">
                                 <div class="col-xs-12" id="guessBlanks" type="text"> </div>
                             </div>
@@ -143,34 +142,32 @@
                                 <div class="col-xs-12" id="guessedLetters" type="text"> </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12"> Wins:</div>
+                                <div class="col-xs-6"> Wins:</div>
+                                <div class="col-xs-6"> Losses:</div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12" id="win"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12"> Losses:</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12" id="loss"></div>
+                                <div class="col-xs-6" id="win"></div>
+                                <div class="col-xs-6" id="loss"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="modal fade" id="winJBModal" role="dialog">
+                    <div class="modal fade" id="winHMModal" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">CONGRATS! </h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
-                                    </button>
+                                    </button> -->
                                 </div>
                                 <div class="modal-body gamewinmodalbody">
                                     <p>
                                         <h4>You Win!</h4>
                                     </p>
                                 </div>
+                                <button>Play Again</button>
+                                <button>Return to Home</button>
                             </div>
                         </div>
                     </div>
@@ -185,31 +182,9 @@
         </div>
     </div>
 
-
-
-
-    <!-- <div class="modal fade" id="winHMModal" role="dialog">
-        <div class="modal-dialog">
-            <p>You Win!</p>
-            <button id="modalHMClose">Play Again</button>
-            <button id="modalHMClose">Change Difficulty</button>
-            <button>
-                <a href="home.html">
-                    Return to Home
-                </a>
-            </button>
-        </div>
-    </div> -->
-    <!-- </div> -->
-    <!-- <div class="row">
-        <div class="col-md-12 footer">
-            Copright© 2018 uLearn
-        </div>
-    </div> -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="js/home.js"></script> -->
+    <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="js/hangman.js"></script>
 </body>
 
