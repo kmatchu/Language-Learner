@@ -1,0 +1,32 @@
+/* .nothing {color: #252525;
+color: #777;
+color: #333;
+ color: #FFB442;
+ color: #000;
+ color: #f8f8f8;
+ color: #e7e7e7;
+ color: #d44b4b;} */
+
+.boxWS  {
+        font-size: 36px;
+        /* background-color: #f8f8f8; */
+        border: 1px solid #000;
+        height:54px;
+        text-align: center;
+}
+
+.highlight {border: 4px solid #FFB442;}
+.flashWrong {background-color: #d44b4b;}
+.correct   {background-color: green;}
+.foundWords { border:solid 1px #000;
+            font-size:42px;
+        overflow: auto; 
+        text-align: center;
+}
+
+.wrap   {height: auto; overflow:auto;}
+#gamedescr {
+    text-align: center;
+}
+.fadedText{color:#888;}
+.greenText{color:green;}
