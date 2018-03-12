@@ -1,0 +1,115 @@
+.gameTopHeader {
+    padding-bottom: 15px;
+}
+
+.gameTitleHeader {
+    border-top: 8px solid #FFB442;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+#gamedescr {
+    text-align: justify;
+}
+
+#gametitle  {
+    text-align: center;
+}
+
+#gametitle {
+    margin-top: 15px;
+}
+
+#gamehr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.jumbleGame {
+    text-align: center;
+}
+
+.wordCol {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border-bottom: 1px dotted #FFB442;
+    text-transform: uppercase;
+}
+
+.jumbleform {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.checkBtn, #wordSearchBtn {
+    color: #252525;
+    background: #FFB442;
+    font-weight: 600;
+}
+
+.checkBtn:hover,
+.checkBtn:visited,
+.checkBtn:focus,
+.checkBtn.focus,
+.checkBtn.active.focus, 
+.checkBtn.active:focus, 
+.checkBtn.active:hover, 
+.checkBtn:active.focus, 
+.checkBtn:active:focus, 
+.checkBtn:active:hover,
+#wordSearchBtn:hover,
+#wordSearchBtn:visited,
+#wordSearchBtn:focus,
+#wordSearchBtn.focus,
+#wordSearchBtn.active.focus, 
+#wordSearchBtn.active:focus, 
+#wordSearchBtn.active:hover, 
+#wordSearchBtn:active.focus, 
+#wordSearchBtn:active:focus, 
+#wordSearchBtn:active:hover
+ {
+    background: rgb(255, 179, 65);
+}
+
+.correct {
+    border: 1px solid green;
+    color: #fff;
+}
+
+.incorrect {
+    border: 1px solid red;
+}
+
+.btnCorrect {
+    background-color: green;
+    pointer-events: none;
+}
+
+.btnIncorrect {
+    background-color: red;
+}
+
+.modal-header .close {
+    margin-top: -30px;
+}
+
+.gamewinmodalbody {
+    padding-bottom: 20px;
+}
+
+.searchdiv {
+    padding-top: 15px;
+    text-align: center;
+}
+
+#wordInput {
+    text-align: center;
+}
+
+#lookup {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}

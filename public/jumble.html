@@ -4,51 +4,156 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>uLEARN: Playing a game of Jumble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+    <link rel="stylesheet" type="text/css" href="css/game.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/jumble.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <button>
-                <a href="home.html">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                </a>
-            </button>
-        </div>
-        <div class="row">
-            <section id="jumble"></section>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 searchdiv">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Word Lookup</label>
-                        <textarea class="form-control" id="wordInput" rows="1" placeholder="Enter Word Here"></textarea>
+    <div class="container fullPage">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="col-xs-12 phone-nav">
+                            <p>
+                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
+                            </p>
+                            <p id="logo-subtext">Your personal language companion</p>
+                        </div>
                     </div>
-                    <button id="wordSearchBtn" type="submit" class="btn btn-primary">Search</button>
-                </form>
-                <div id="lookup"> </div>
+                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option">
+                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option" class="welcomemsg">
+                                <span id="userGreeting">
+                                    <a href="home.html">WELCOME
+                                        <label id="userInfo"></label>
+                                    </a>
+                                </span>
+                            </li>
+                            <li id="option" class="signuplink">
+                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                    SIGN UP
+                                </a>
+                            </li>
+                            <li id="option" class="loginlink">
+                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                            </li>
+                            <li id="option" class="guestlink">
+                                <a href="/home">GUEST ACCESS</a>
+                            </li>
+                            <li id="option">
+                                <a href="#">ABOUT THE TEAM</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </nav>
+        <div class="wrap mainContent">
+            <div class="container-fluid">
+                <div class="row gameTopHeader">
+                    <div class="title-header">
+                        <div class="col-md-10 col-md-offset-1 gameTitleHeader">
+                            <a href="/home.html">
+                                << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
+                        </div>
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 id="gametitle">JUMBLE</h3>
+                            <hr id="gamehr">
+                            <p id="gamedescr">JUMBLE DESCRIPTION GOES HERE. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit
+                                ut aliquam purus. Non consectetur a erat nam at lectus urna duis. Pellentesque sit amet porttitor
+                                eget dolor morbi non.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 contentContainer">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 searchdiv">
+                                    <form>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="wordInput" rows="1" placeholder="Lookup a word for translation here"></textarea>
+                                        </div>
+                                        <button id="wordSearchBtn" type="submit" class="btn btn-primary">Search</button>
+                                    </form>
+                                    <div id="lookup"> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 jumbleGame">
+                                    <section id="jumble"></section>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="modal fade" id="winJBModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">CONGRATS! </h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body gamewinmodalbody">
+                                    <p>
+                                        <h4>You Win!</h4>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 footer">
+                            Copright© 2018 uLearn
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="modal fade" id="winJBModal" role="dialog">
-                <div class="modal-dialog">
-                <p>You Win!</p>
-                <button id="modalJBClose">Close</button>
-                </div>
-        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/home.js"></script>
-    <script type="text/javascript" src="js/jumble.js"></script>
 
 </body>
 
