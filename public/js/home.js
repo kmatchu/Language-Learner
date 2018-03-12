@@ -15,27 +15,6 @@ $(document).ready(function () {
         "dutch": "Dutch description goes here. " + loremIpsum
     };
 
-    function hideLinks() {
-        // USER DATA exists in localstorage
-        if (localStorage.getItem("user") !== null) {
-            $(".signuplink").addClass("hidden");
-            $(".loginlink").addClass("hidden");
-            $(".guestlink").addClass("hidden");
-            $(".welcomemsg").removeClass("hidden");
-
-            username = localStorage.getItem("user");
-            $("#userInfo").text(username);
-        }
-        else {
-            $(".welcomemsg").addClass("hidden");
-            $(".signuplink").removeClass("hidden");
-            $(".loginlink").removeClass("hidden");
-            $(".guestlink").removeClass("hidden");
-        }
-    }
-
-    hideLinks();
-
 var stateFun = (function () {
     var state = {}
     $(document).on("click", ".lang", function () {        
