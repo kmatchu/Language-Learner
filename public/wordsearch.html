@@ -4,50 +4,160 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Word Search</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/game.css" />
+    <link rel="stylesheet" type="text/css" href="css/WS.css" />
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
 
 </head>
 
 <body>
     <div class="container">
-    <div class="row foundWords col-md-2">
-    Word
-    </div>
-    <div class="col-md-9 col-md-offset-1">
-    <div class="row boxy0">
-    </div>
-    <div class="row boxy1">
-    </div>
-    <div class="row boxy2">
-    </div>
-    <div class="row boxy3">
-    </div>
-    <div class="row boxy4">
-    </div>
-    <div class="row boxy5">
-    </div>
-    <div class="row boxy6">
-    </div>
-    <div class="row boxy7">
-    </div>
-    <div class="row boxy8">
-    </div>
-    </div>
-    </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="col-xs-12 phone-nav">
+                            <p>
+                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
+                            </p>
+                            <p id="logo-subtext">Your personal language companion</p>
+                        </div>
+                    </div>
+                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option">
+                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-    <div class="modal fade" id="winWSModal" role="dialog">
-        <div class="modal-dialog">
-        <p>You Win!</p>
-        <button id="modalWSClose">Close</button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                            <li id="option" class="welcomemsg">
+                                <span id="userGreeting">
+                                    <a href="home.html">WELCOME
+                                        <label id="userInfo"></label>
+                                    </a>
+                                </span>
+                            </li>
+                            <li id="option" class="signuplink">
+                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                    SIGN UP
+                                </a>
+                            </li>
+                            <li id="option" class="loginlink">
+                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                            </li>
+                            <li id="option" class="guestlink">
+                                <a href="/home">GUEST ACCESS</a>
+                            </li>
+                            <li id="option">
+                                <a href="#">ABOUT THE TEAM</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </nav>
+        <div class="wrap mainContent">
+            <div class="row gameTopHeader">
+                <div class="title-header">
+                    <div class="col-md-10 col-md-offset-1 gameTitleHeader">
+                        <a href="/home.html">
+                            << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
+                    </div>
+
+                    <div class="col-md-10 col-md-offset-1">
+                        <h3 id="gametitle">WORD SEARCH</h3>
+                        <hr id="gamehr">
+                        <p id="gamedescr">Find all the hidden words. Click letters to spell out your guess!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="foundWords col-md-3">
+                    <div class="row">
+                        Word Key:
+                    </div>
+                    <div class="row word0 fadedText"></div>
+                    <div class="row word1 fadedText"></div>
+                    <div class="row word2 fadedText"></div>
+                    <div class="row word3 fadedText"></div>
+                    <div class="row word4 fadedText"></div>
+                    <div class="row word5 fadedText"></div>
+                    <div class="row word6 fadedText"></div>
+        
+                </div>
+                <div class="col-md-8 col-md-offset-1">
+                    <div class="row boxy0">
+                    </div>
+                    <div class="row boxy1">
+                    </div>
+                    <div class="row boxy2">
+                    </div>
+                    <div class="row boxy3">
+                    </div>
+                    <div class="row boxy4">
+                    </div>
+                    <div class="row boxy5">
+                    </div>
+                    <div class="row boxy6">
+                    </div>
+                    <div class="row boxy7">
+                    </div>
+                    <!-- <div class="row boxy8"> -->
+                    <!-- </div> -->
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="modal fade" id="winWSModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">CONGRATS! </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body gamewinmodalbody">
+                            <p>
+                                <h4>You Win!</h4>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12 footer">
+                        Copright© 2018 uLearn
+                    </div>
+                </div>
     </div>
 </body>
 <script src="js/wordSearch.js"></script>
+
 </html>

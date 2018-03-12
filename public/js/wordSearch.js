@@ -1,7 +1,39 @@
-var useArr = sessionStorage.getItem("wordArr").split(",").splice(0,7);
+var useArr = sessionStorage.getItem("wordArr").split(",").splice(0,6);
 console.log(useArr);
 console.log(useArr);
 var boxWS = $("<div>").addClass("col-md-1 boxWS unoccupied wrong");
+
+// Code to propogate english hints in "Found Words" box..this is broken right now
+// var hintArr = [];
+var langCode = "fr";
+//     // var langCode = ;
+// var counter = 0
+var runAjax = function(counter){
+    queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + useArr[counter] + "&lang=" + langCode + "-en";
+    $.ajax({
+        url: queryURL,
+        type: "GET",
+        dataType: "json",
+    }).then(function (response) {
+        if (response.text[0] !== useArr[counter]) {
+            // hintArr.push(response.text[0]);
+            $(".word" + counter).text(response.text[0]);
+//             // setTimeout(function(){console.log(response.text[0])},2000);
+//             counter += 1;
+        }
+        else {
+            $(".word" + counter).text("Hint unavailable")
+        }
+//     }).then(translate());
+});
+};
+
+for(var i=0;i<useArr.length;i++){
+    runAjax(i)
+}
+
+// $(document).on("click",".clicky",function(){
+//     translate();});
 
 var displArr = [
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
@@ -11,8 +43,8 @@ var displArr = [
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
-    [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()]
+    // [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()]
 ];
 
 var makeWordsSplit = function(wordArr){
@@ -23,15 +55,15 @@ var makeWordsSplit = function(wordArr){
     return wordSpli;  };
 
 var renderGrid = function(){
-    for(var i=0;i<9;i++){
-    for(var j=0;j<9;j++){
+    for(var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
     $(".boxy" + i).append(displArr[i][j]);  };
 };  };
 
 renderGrid();
 var spawn = function(){
-var rand1 = Math.floor(Math.random()*9);
-var rand2 = Math.floor(Math.random()*9);
+var rand1 = Math.floor(Math.random()*8);
+var rand2 = Math.floor(Math.random()*8);
 return [rand1,rand2];  };
 
 var randDirection = function(){
@@ -69,7 +101,7 @@ var checkField = function(inputWordArr){
         break;
 
         case "right":
-        if((spawnSpot[1]+inputWordArr.length)>8){
+        if((spawnSpot[1]+inputWordArr.length)>7){
             checkField(inputWordArr);
         }
         else{
@@ -109,7 +141,7 @@ var checkField = function(inputWordArr){
         break;
 
         case "down":
-        if((spawnSpot[0]+inputWordArr.length)>8){
+        if((spawnSpot[0]+inputWordArr.length)>7){
             checkField(inputWordArr);
         }
         else{
@@ -139,8 +171,8 @@ for (var i=0;i<makeWordsSplit(useArr).length;i++){
     checkField(makeWordsSplit(useArr)[i]);  }
 
 var renderFiller = function(){
-    for(var i=0;i<9;i++){
-    for(var j=0;j<9;j++){
+    for(var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
     if($(displArr[i][j]).hasClass("unoccupied")){
         var alphabet = "abcdefghijklmnopqrstuvwxyz";
         var letter = alphabet[Math.floor(Math.random()*26)];
@@ -156,9 +188,10 @@ $(document).on("click",".clicker", function(){
     $(this).addClass("highlight");
     for (var i=0;i<makeWordsSplit(useArr).length;i++){
         if(makeWordsSplit(useArr)[i].toString() === currentGuess.toString()){
-        $(".highlight").addClass("correct").removeClass("clicker");
-        displayArray.push(currentGuess.toString().replace(/,/g,""));
-        $(".foundWords").text(displayArray.toString());
+        $(".highlight").addClass("correct").removeClass("clicker").removeClass("highlight");
+        $(".word" + i ).addClass("greenText").text(currentGuess.toString().replace(/,/g,"")).removeClass("fadedText");
+        // displayArray.push(currentGuess.toString().replace(/,/g,""));
+        // $(".foundWords").text(displayArray.toString());
         currentGuess = [];
         if(!$(".clicker").length){
             $("#winWSModal").modal("show");;
@@ -172,12 +205,14 @@ $(document).on("click","#modalWSClose",function(){
 });
 
 $(document).on("click",".wrong",function(){
-    $(".highlight").removeClass("highlight");
+    $(".highlight").removeClass("highlight").addClass("flashWrong");
     currentGuess = [];
+    setTimeout(function(){$(".flashWrong").removeClass("flashWrong");},250);
 })
 
 $(document).on("click",".highlight",function(){
-    $(".highlight").removeClass("highlight");
+    $(".highlight").removeClass("highlight").addClass("flashWrong");
     currentGuess = [];
+    setTimeout(function(){$(".flashWrong").removeClass("flashWrong");},250);
 })
 
