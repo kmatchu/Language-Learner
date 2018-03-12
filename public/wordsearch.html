@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
-
+    <script src="js/links.js"></script>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">WELCOME
+                                    <a href="home.html">RETURN TO HOME
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
@@ -70,11 +70,14 @@
                             <li id="option" class="loginlink">
                                 <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
                             </li>
+                            <li id="option" class="logoutlink">
+                                <a href="#">LOGOUT</a>
+                            </li>
                             <li id="option" class="guestlink">
-                                <a href="/home">GUEST ACCESS</a>
+                                <a href="#">GUEST ACCESS</a>
                             </li>
                             <li id="option">
-                                <a href="#">ABOUT THE TEAM</a>
+                                <a href="about.html">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
@@ -110,7 +113,7 @@
                     <div class="row word4 fadedText"></div>
                     <div class="row word5 fadedText"></div>
                     <div class="row word6 fadedText"></div>
-        
+
                 </div>
                 <div class="col-md-8 col-md-offset-1">
                     <div class="row boxy0">
@@ -135,27 +138,27 @@
             </div>
         </div>
         <div class="modal fade" id="winWSModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">CONGRATS! </h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body gamewinmodalbody">
-                            <p>
-                                <h4>You Win!</h4>
-                            </p>
-                        </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">CONGRATS! </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body gamewinmodalbody">
+                        <p>
+                            <h4>You Win!</h4>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                    <div class="col-md-12 footer">
-                        Copright© 2018 uLearn
-                    </div>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 footer">
+                Copright© 2018 uLearn
+            </div>
+        </div>
     </div>
 </body>
 <script src="js/wordSearch.js"></script>

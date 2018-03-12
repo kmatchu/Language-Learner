@@ -30,27 +30,6 @@ var winWordRandNA = makeSortString(winWordRand);
 console.log(winWordRandNA, "wwrna")
 //
 
-function hideLinks() {
-    // USER DATA exists in localstorage
-    if (localStorage.getItem("user") !== null) {
-        $(".signuplink").addClass("hidden");
-        $(".loginlink").addClass("hidden");
-        $(".guestlink").addClass("hidden");
-        $(".welcomemsg").removeClass("hidden");
-
-        username = localStorage.getItem("user");
-        $("#userInfo").text(username);
-    }
-    else {
-        $(".welcomemsg").addClass("hidden");
-        $(".signuplink").removeClass("hidden");
-        $(".loginlink").removeClass("hidden");
-        $(".guestlink").removeClass("hidden");
-    }
-}
-
-hideLinks();
-
 var yandex = function(){
 var language = sessionStorage.getItem("lang");
    queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + winWordRand + "&lang=" + language + "-en";

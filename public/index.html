@@ -16,6 +16,7 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/links.js"></script>
 </head>
 
 <body>
@@ -68,11 +69,14 @@
                             <li id="option" class="loginlink">
                                 <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
                             </li>
-                            <li id="option" class="guestlink">
-                                <a href="/home">GUEST ACCESS</a>
+                            <li id="option" class="logoutlink">
+                                    <a href="#">LOGOUT</a>
                             </li>
+                            <li id="option" class="guestlink">
+                                <a href="#">GUEST ACCESS</a>
+                            </li>                            
                             <li id="option">
-                                <a href="#">ABOUT THE TEAM</a>
+                                <a href="about.html">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
@@ -197,13 +201,16 @@
                                         <div>
                                             <p id="loginerror" class="error">&nbsp;</p>
                                         </div>
+                                        <div class="row">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary loginSubmit">LOGIN</button>
+                                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary loginSubmit">LOGIN</button>
-                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -219,38 +226,41 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
-                                    <form class="navbar-form navbar-left signup-form">
+                                    <form class="navbar-form navbar-left signup-form" id="signupForm">
                                         <div class="user-form-group">
-                                            <input type="text" class="form-control" placeholder="USERNAME">
+                                            <input id="suusername" type="text" class="form-control" placeholder="USERNAME">
                                             <p class="error">
                                                 <label id="sunamerr">&nbsp;</label>
                                             </p>
                                         </div>
                                         <div class="email-form-group">
-                                            <input type="text" class="form-control" placeholder="EMAIL">
+                                            <input id="suemail" type="text" class="form-control" placeholder="EMAIL">
                                             <p class="error">
                                                 <label id="suemailerr">&nbsp;</label>
                                             </p>
                                         </div>
                                         <div class="pwd-form-group">
-                                            <input type="password" class="form-control" placeholder="PASSWORD">
-                                            <p class="error">
+                                            <input id="supwd" type="password" class="form-control" placeholder="PASSWORD">
+                                            <!-- <p class="error">
                                                 <label id="supwderr">&nbsp;</label>
-                                            </p>
+                                            </p> -->
                                         </div>
                                         <div class="rptpwd-form-group">
-                                            <input type="password" class="form-control" placeholder="REPEAT PASSWORD">
+                                            <input id="supwdrpt" type="password" class="form-control" placeholder="REPEAT PASSWORD">
                                             <p class="error">
                                                 <label id="supwdrpterr">&nbsp;</label>
                                             </p>
                                         </div>
+                                        <div class="row">
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary signupSubmit">SIGN UP</button>
+                                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary signupSubmit" data-dismiss="modal">SIGN UP</button>
-                                <button type="button" class="btn btn-seconday guest">CONTINUE AS GUEST</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>

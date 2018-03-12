@@ -18,6 +18,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/home.js"></script>
     <script src="js/jumble.js"></script>
+    <script src="js/links.js"></script>
 </head>
 
 <body>
@@ -57,7 +58,7 @@
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">WELCOME
+                                    <a href="home.html">RETURN TO HOME
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
@@ -70,11 +71,14 @@
                             <li id="option" class="loginlink">
                                 <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
                             </li>
+                            <li id="option" class="logoutlink">
+                                <a href="#">LOGOUT</a>
+                            </li>
                             <li id="option" class="guestlink">
-                                <a href="/home">GUEST ACCESS</a>
+                                <a href="#">GUEST ACCESS</a>
                             </li>
                             <li id="option">
-                                <a href="#">ABOUT THE TEAM</a>
+                                <a href="about.html">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
@@ -87,10 +91,8 @@
             <div class="container-fluid">
                 <div class="row gameTopHeader">
                     <div class="title-header">
-                        <div class="col-md-10 col-md-offset-1 gameTitleHeader">
-                            <a href="/home.html">
-                                << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
-                        </div>
+                        <!-- <div class="col-md-10 col-md-offset-1 gameTitleHeader">                           
+                        </div> -->
 
                         <div class="col-md-10 col-md-offset-1">
                             <h3 id="gametitle">JUMBLE</h3>
