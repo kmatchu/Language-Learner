@@ -395,17 +395,3 @@ body {
     width:100%
 }
 
-.boxWS  {
-        font-size: 48px;
-        border: 1px solid black;
-        height:72px;
-        text-align: center;
-}
-
-.highlight {background-color: salmon;}
-.correct   {background-color: lightblue;}
-.foundWords { border:solid 1px black;
-            font-size:48px;
-        overflow: auto; 
-}
-
