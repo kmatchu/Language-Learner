@@ -101,7 +101,7 @@ $(document).ready(function () {
                     $("#loginpassword").val("");
                     $("#loginerror").text("");
                     localStorage.setItem("user", Login.username);
-                    window.location.href = "/home";
+                    window.location.href = "home.html";
                 }
             }
 
