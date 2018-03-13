@@ -89,15 +89,19 @@ var begin = function (event) {
         allGuess = [];
         lives = 7;
         wins = wins + 1;
-        winWordsArr.splice(winWordsArr.indexOf(winWordRand), 1);
-        winWordRand = winWordsArr[Math.floor(Math.random() * winWordsArr.length)];
-        winWordRandNA = makeSortString(winWordRand);
-        winWordLetArr = winWordRandNA.split("");
-        uArr = (winWordLetArr.fill(" _ ", 0));
-        replace = wordDisplay.innerText = uArr.join(" ");
+
         if (wins === 10) {
             $("#winModal").modal("show");
         }
+        else {
+            winWordsArr.splice(winWordsArr.indexOf(winWordRand), 1);
+            winWordRand = winWordsArr[Math.floor(Math.random() * winWordsArr.length)];
+            winWordRandNA = makeSortString(winWordRand);
+            winWordLetArr = winWordRandNA.split("");
+            uArr = (winWordLetArr.fill(" _ ", 0));
+            replace = wordDisplay.innerText = uArr.join(" ");
+        }
+
     }
     if (!isMatch) {
         lives--;
