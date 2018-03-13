@@ -10,7 +10,7 @@ The idea behind this application is
 
 # Users Guide:
 
-Application Link - <https://codisteinborn.github.io/ConcertApp/>
+Application Link - <https://language-learner2018.herokuapp.com/>
 
 Instructions -
 

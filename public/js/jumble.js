@@ -7,7 +7,27 @@ console.log(difficulty);
 var wordArray = sessionStorage.getItem("wordArr").split(",")
 console.log(wordArray);
 
+// // following code from Stack Overflow
+makeSortString = (function() {
+    var translate_re = /[¹²³áàâãäåaaaÀÁÂÃÄÅAAAÆccç©CCÇÐÐèéê?ëeeeeeÈÊË?EEEEE€gGiìíîïìiiiÌÍÎÏ?ÌIIIlLnnñNNÑòóôõöoooøÒÓÔÕÖOOOØŒr®Ršs?ßŠS?ùúûüuuuuÙÚÛÜUUUUýÿÝŸžzzŽZZ]/g;
+    var translate = {
+"¹":"1","²":"2","³":"3","á":"a","à":"a","â":"a","ã":"a","ä":"a","å":"a","a":"a","a":"a","a":"a","À":"a","Á":"a","Â":"a","Ã":"a","Ä":"a","Å":"a","A":"a","A":"a",
+"A":"a","Æ":"a","c":"c","c":"c","ç":"c","©":"c","C":"c","C":"c","Ç":"c","Ð":"d","Ð":"d","è":"e","é":"e","ê":"e","?":"e","ë":"e","e":"e","e":"e","e":"e","e":"e",
+"e":"e","È":"e","Ê":"e","Ë":"e","?":"e","E":"e","E":"e","E":"e","E":"e","E":"e","€":"e","g":"g","G":"g","i":"i","ì":"i","í":"i","î":"i","ï":"i","ì":"i","i":"i",
+"i":"i","i":"i","Ì":"i","Í":"i","Î":"i","Ï":"i","?":"i","Ì":"i","I":"i","I":"i","I":"i","l":"l","L":"l","n":"n","n":"n","ñ":"n","N":"n","N":"n","Ñ":"n","ò":"o",
+"ó":"o","ô":"o","õ":"o","ö":"o","o":"o","o":"o","o":"o","ø":"o","Ò":"o","Ó":"o","Ô":"o","Õ":"o","Ö":"o","O":"o","O":"o","O":"o","Ø":"o","Œ":"o","r":"r","®":"r",
+"R":"r","š":"s","s":"s","?":"s","ß":"s","Š":"s","S":"s","?":"s","ù":"u","ú":"u","û":"u","ü":"u","u":"u","u":"u","u":"u","u":"u","Ù":"u","Ú":"u","Û":"u","Ü":"u",
+"U":"u","U":"u","U":"u","U":"u","ý":"y","ÿ":"y","Ý":"y","Ÿ":"y","ž":"z","z":"z","z":"z","Ž":"z","Z":"z","Z":"z"
+    };
+    return function(s) {
+        return(s.replace(translate_re, function(match){return translate[match];}) );
+    }
+})();
+
+//
+
 $(document).ready(function () {
+    // event.preventDefault();
     //  This section contains the array of words to scramble (wordArray) and then scrambles each word in the array (newWordArr)
     function shuffleWord(word) {
         var shuffledWord = '';
@@ -19,6 +39,8 @@ $(document).ready(function () {
     }
 
     var newWordArr = wordArray.map(elem => shuffleWord(elem));
+    var wordArrayNA = wordArray.map(elem => makeSortString(elem));
+    console.log(wordArrayNA, "wana")
 
     for (var i = 0; i < newWordArr.length; i++) {
         if (newWordArr[i] === wordArray[i]) {
@@ -35,24 +57,15 @@ $(document).ready(function () {
         newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div>" +
         "</div>"));
 
-    // newWordArr.forEach(elem => $("#jumble").append("<div class='col-md-4'>" +
-    //     "<div id='word" + newWordArr.indexOf(elem) + "'>" +
-    //     elem + "</div> <div class='correct' id='correct" + newWordArr.indexOf(elem) +
-    //     "'> </div> <div> <form> <input class='form-control jumbleform' id='jumbleGuess" +
-    //     newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div>" +
-    //     "<button type='button' class='btn btn-primary checkBtn' id='btn" +
-    //     newWordArr.indexOf(elem) + "'> CHECK</button></div>"));
 
     //  This onclick function checks if the user has un-scrambled the word correctly
     $(".jumbleform").on("blur", function (e) {
-            e.preventDefault();
-        // for (let i = 0; i < wordArray.length; i++) {
-            // let pos = $(this).attr("id").slice(3);
+            // event.preventDefault();
 
             let pos = $(this).attr("id").slice(11);
             let userGuess = $(this).val().toLowerCase();
 
-            if ($("#jumbleGuess" + [pos]).val().toLowerCase() === wordArray[pos]) {
+            if ($("#jumbleGuess" + [pos]).val().toLowerCase() === wordArrayNA[pos]) {
                 // $("#correct" + [i]).text(" Correct!");
 
                 $(this).removeClass("incorrect");
@@ -60,28 +73,18 @@ $(document).ready(function () {
                 $(this).attr("readonly", "readonly");                
                 $(this).css("background-color", "green")
                       
-                // $("#jumbleGuess" + [pos]).removeClass("incorrect");
-                // $("#jumbleGuess" + [pos]).addClass("correct");
-                // $(this).removeClass("btnIncorrect");
-                // $(this).addClass("btnCorrect");
-                // $(this).text("CORRECT!");
-
-                // $("#btn" + [i]).addClass("btnCorrect");
-                // $("#btn" + [i]).text("CORRECT!");
                 checkWin();
             }
             else {
                 $(this).addClass("incorrect");
-                // $(this).addClass("btnIncorrect");
-                // $(this).text("CHECK AGAIN!");
             }
         // }
     });
 
+
     var checkWin = function () {
         var win = true;
         for (var i = 0; i < wordArray.length; i++) {
-            // if ($("#btn" + [i]).text() !== "CORRECT!") {
             if (!$("#jumbleGuess" + [i]).hasClass("correct")) {
                 win = false;
             };
@@ -98,7 +101,7 @@ $(document).ready(function () {
         event.preventDefault();
         $("#lookup").text("");
         var searchWord = $("#wordInput").val();
-        //  var langCode = "es"
+
         queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=" + language + "-en";
         $.ajax({
             url: queryURL,

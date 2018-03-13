@@ -90,17 +90,17 @@ var stateFun = (function () {
             sessionStorage.setItem("wordArr", wordArr);
         }).done(function () {
             if (state.game === "jumble") {
-                $("#playBtn").attr("href", "jumble.html");
+                $("#playBtn").attr("href", "/jumble.html");
                 window.location.href = $("#playBtn").attr(("href"));
                 // console.log("go 2 game");
             }
             else if (state.game === "ws") {
-                $("#playBtn").attr("href", "wordsearch.html");
+                $("#playBtn").attr("href", "/wordsearch.html");
                 window.location.href = $("#playBtn").attr(("href"));
                 // console.log("go 2 game")
             }
             else {
-                $("#playBtn").attr("href", "hangman.html");
+                $("#playBtn").attr("href", "/hangman.html");
                 window.location.href = $("#playBtn").attr(("href"));
                 // console.log("go 2 game")
             }

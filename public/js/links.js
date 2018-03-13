@@ -24,6 +24,6 @@ $(document).ready(function() {
 
     $(".logoutlink").on("click", function()  {
         localStorage.removeItem("user");
-        window.location.href = "index.html";
+        window.location.href = "/";
     });
 });
