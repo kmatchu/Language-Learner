@@ -66,6 +66,7 @@ var stateFun = (function () {
         if (!state.game || !state.language || !state.difficulty) {
             $(".gameErr").text("Please select a language, game, and difficulty level before proceeding");
         }
+        else{
         var urlLang;
         if (state.language === "fr") {
             urlLang = "french"
@@ -104,7 +105,7 @@ var stateFun = (function () {
                 window.location.href = $("#playBtn").attr(("href"));
                 // console.log("go 2 game")
             }
-        });
+        }); };
     });
 })();
 
