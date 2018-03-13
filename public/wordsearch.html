@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container fullPage">
         <nav class="navbar navbar-default">
             <div class="container-fluid navbar-custom">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -87,76 +87,101 @@
             </div>
         </nav>
         <div class="wrap mainContent">
-            <div class="row gameTopHeader">
-                <div class="title-header">
-                    <div class="col-md-10 col-md-offset-1 gameTitleHeader">
-                        <a href="/home.html">
-                            << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
-                    </div>
+            <div class="container-fluid">
+                <div class="row gameTopHeader">
+                    <div class="title-header">
+                        <div class="col-md-10 col-md-offset-1 gameTitleHeader">
+                            <!-- <a href="/home.html">
+                            << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a> -->
+                        </div>
 
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3 id="gametitle">WORD SEARCH</h3>
-                        <hr id="gamehr">
-                        <p id="gamedescr">Find all the hidden words. Click letters to spell out your guess!</p>
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 id="gametitle">WORD SEARCH</h3>
+                            <hr id="gamehr">
+                            <p id="gamedescr">Find all the hidden words. Click letters to spell out your guess!</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="content">
-                <div class="foundWords col-md-3">
-                    <div class="row">
-                        Word Key:
-                    </div>
-                    <div class="row word0 fadedText"></div>
-                    <div class="row word1 fadedText"></div>
-                    <div class="row word2 fadedText"></div>
-                    <div class="row word3 fadedText"></div>
-                    <div class="row word4 fadedText"></div>
-                    <div class="row word5 fadedText"></div>
-                    <div class="row word6 fadedText"></div>
+                <div class="row">
+                    <div class="col-md-12 contentContainer">
+                        <div class="content">
+                            <div class="row wsRow">
+                                <!-- <div class="col-md-8"> -->
 
+                                <!-- <div class="row boxy8"> -->
+                                <!-- </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="foundWords col-md-2">
+                                    
+
+                                </div> -->
+
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1 wsHeader">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 wsContainer">
+                                        <div class="col-md-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-2 wsGame">
+                                            <div class="row boxy0">
+                                            </div>
+                                            <div class="row boxy1">
+                                            </div>
+                                            <div class="row boxy2">
+                                            </div>
+                                            <div class="row boxy3">
+                                            </div>
+                                            <div class="row boxy4">
+                                            </div>
+                                            <div class="row boxy5">
+                                            </div>
+                                            <div class="row boxy6">
+                                            </div>
+                                            <div class="row boxy7">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 wordKey foundWords">
+                                            <!-- <button type="button" class="btn btn-primary diff" id="medium" value="medium">MEDIUM</button> -->
+                                            <div class="row">
+                                                Word Key:
+                                            </div>
+                                            <div class="row word0 fadedText"></div>
+                                            <div class="row word1 fadedText"></div>
+                                            <div class="row word2 fadedText"></div>
+                                            <div class="row word3 fadedText"></div>
+                                            <div class="row word4 fadedText"></div>
+                                            <div class="row word5 fadedText"></div>
+                                            <div class="row word6 fadedText"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="winWSModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">CONGRATS! </h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body gamewinmodalbody">
+                                    <p>
+                                        <h4>You Win!</h4>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 col-md-offset-1">
-                    <div class="row boxy0">
-                    </div>
-                    <div class="row boxy1">
-                    </div>
-                    <div class="row boxy2">
-                    </div>
-                    <div class="row boxy3">
-                    </div>
-                    <div class="row boxy4">
-                    </div>
-                    <div class="row boxy5">
-                    </div>
-                    <div class="row boxy6">
-                    </div>
-                    <div class="row boxy7">
-                    </div>
-                    <!-- <div class="row boxy8"> -->
-                    <!-- </div> -->
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="winWSModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">CONGRATS! </h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body gamewinmodalbody">
-                        <p>
-                            <h4>You Win!</h4>
-                        </p>
+                <div class="row">
+                    <div class="col-md-12 footer">
+                        Copright© 2018 uLearn
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 footer">
-                Copright© 2018 uLearn
             </div>
         </div>
     </div>
