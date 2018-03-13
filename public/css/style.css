@@ -146,6 +146,10 @@ body {
     border-bottom: 0;
 }
 
+/* .nav-tabs.nav-justified li {
+    display: inline-block;
+} */
+
 .nav-tabs.nav-justified a:hover {
     color: inherit;
 }
@@ -312,6 +316,24 @@ body {
     width: 100%;
 }
 
+.login-form {
+    border-bottom: 1px solid #252525;
+}
+
+.login-modal-footer {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.modal-header .close {
+    margin-top: -30px;
+    font-size: 30px;
+}
+
+.signup-modal-header {
+    border-bottom: 0;
+}
+
 .user-form-group,
 .email-form-group,
 .pwd-form-group,
@@ -334,7 +356,7 @@ body {
     width: 90%;
 }
 
-.loginSubmit, .guest, .signupSubmit {
+.loginSubmit, .guestlink, .signupSubmit {
     font-weight: 600;
 }
 
@@ -386,9 +408,13 @@ body {
 }
 
 .footer {
-    height: 40px;
+    height: 90px;
     padding-top: 15px;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.footer div {
+    padding-top: 5px;
 }
 
 .flag{

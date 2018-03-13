@@ -3,8 +3,6 @@ $(document).ready(function() {
         // USER DATA exists in localstorage
         if (localStorage.getItem("user") !== null) {
             $(".signuplink").addClass("hidden");
-            $(".loginlink").addClass("hidden");
-            $(".guestlink").addClass("hidden");
             $(".welcomemsg").removeClass("hidden");
             $(".logoutlink").removeClass("hidden");
 
@@ -15,8 +13,6 @@ $(document).ready(function() {
             $(".welcomemsg").addClass("hidden");
             $(".logoutlink").addClass("hidden");
             $(".signuplink").removeClass("hidden");
-            $(".loginlink").removeClass("hidden");            
-            $(".guestlink").removeClass("hidden");
         }
     }
 
