@@ -1,4 +1,6 @@
 var winWordsArr = sessionStorage.getItem("wordArr").split(",")
+var language = sessionStorage.getItem("lang");
+var difficulty = sessionStorage.getItem("diff");
 var wordDisplay = document.querySelector("#guessBlanks")
 var winWordRand = winWordsArr[Math.floor(Math.random() * winWordsArr.length)];
 var winWordLetArr = winWordRand.split("");
@@ -31,7 +33,7 @@ console.log(winWordRandNA, "wwrna")
 //
 
 var yandex = function(){
-var language = sessionStorage.getItem("lang");
+
    queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + winWordRand + "&lang=" + language + "-en";
    $.ajax({
        url: queryURL,
@@ -80,7 +82,7 @@ var begin = function (event) {
         uArr = (winWordLetArr.fill(" _ ", 0));
         replace = wordDisplay.innerText = uArr.join(" ");
         if (wins === 10){
-            $("#winHMModal").modal("show");}
+            $("#winModal").modal("show");}
     }
     if (!isMatch) {
         lives--;
@@ -98,9 +100,38 @@ var begin = function (event) {
 render();
 yandex();
 
-}
+$(".returnHomeBtn").on("click", function () {
+    console.log("click");
+    window.location.href = "home.html";
+});
+
+$(".playAgainBtn").on("click", function () {
+    console.log("click");
+    var urlLang;
+    if (language === "fr") {
+        urlLang = "french"
+    }
+    else if (language === "es") {
+        urlLang = "spanish"
+    }
+    else {
+        urlLang = "german"
+    }
+    var positionArr = [];
+    var wordArr = [];
+    $.get("api/" + urlLang + "/" + difficulty, function (data) {
+        for (var i = 0; i < 10; i++) {
+            positionArr[i] = Math.floor(Math.random() * Math.floor(100));
+            // console.log(positionArr)
+        }
+        for (var i = 0; i < 10; i++) {
+            wordArr[i] = data[positionArr[i]].Word
+        }
+        sessionStorage.setItem("wordArr", wordArr);
+    }).done(function(){
+        window.location.reload(true);
+    }) 
+})
+};
 $("body").on("keyup", begin);
 
-$(document).on("click","modalHMClose",function(){
-    $("#winHMModal").modal("hide");
-})
