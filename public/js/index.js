@@ -73,14 +73,14 @@ $(document).ready(function () {
             $("#suemailerr").text("");
             $("#supwdrpterr").text("");
             localStorage.setItem("user", Login.username);
-            window.location.href = "/home.html";
+            window.location.href = "home.html";
 
         });
     };
 
     $(".guestlink").on("click", function() {
         localStorage.setItem("user", "guest");
-        window.location.href = "/home.html";
+        window.location.href = "home.html";
     });
 
     function findUser(Login) {
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     $("#loginpassword").val("");
                     $("#loginerror").text("");
                     localStorage.setItem("user", Login.username);
-                    window.location.href = "/home.html";
+                    window.location.href = "home.html";
                 }
             }
 

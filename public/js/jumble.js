@@ -40,14 +40,14 @@ $(document).ready(function () {
 
     var newWordArr = wordArray.map(elem => shuffleWord(elem));
     var wordArrayNA = wordArray.map(elem => makeSortString(elem));
-    console.log(wordArrayNA, "wana")
+    // console.log(wordArrayNA, "wana")
 
     for (var i = 0; i < newWordArr.length; i++) {
         if (newWordArr[i] === wordArray[i]) {
             shuffleWord(newWordArr[i])
         }
     }
-    console.log(newWordArr);
+    // console.log(newWordArr);
 
     // let buttonCreate = "";
 
@@ -60,8 +60,6 @@ $(document).ready(function () {
 
     //  This onclick function checks if the user has un-scrambled the word correctly
     $(".jumbleform").on("blur", function (e) {
-            // event.preventDefault();
-
             let pos = $(this).attr("id").slice(11);
             let userGuess = $(this).val().toLowerCase();
 
