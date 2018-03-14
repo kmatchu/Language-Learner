@@ -9,6 +9,7 @@ $(document).ready(function () {
        "french": "French description goes here. " + loremIpsum,
         "spanish": "Spanish description goes here. " + loremIpsum,
         "german": "German description goes here. " + loremIpsum,
+        "italian": "Italian description goes here. " + loremIpsum,
         "afrikaans": "Afrikaans description goes here. " + loremIpsum,
         "portugese": "Portugese description goes here. " + loremIpsum,
         "hungarian": "Hungarian description goes here. " + loremIpsum,
