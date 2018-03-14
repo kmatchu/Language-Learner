@@ -31,6 +31,15 @@ body {
     background: url("../images/bg.png");
 }
 
+.step {
+    font-family: 'Bree Serif', serif;
+    font-size: 22px;
+    vertical-align: middle;
+    font-weight: 500;
+    border-bottom: 1px dotted #FFB442;
+    margin-right: 4px;
+}
+
 .container{
     margin: 0 auto;
     padding: 20px;
@@ -154,33 +163,48 @@ body {
     color: inherit;
 }
 
-.lang > img {
-    /* border: 1px solid #252525;
+.availablelang .lang > img,
+.unavailablelang .lang > img {
+    border: 1px solid #252525;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
-    box-shadow: 1px 1px 4px 1px #252525; */
+    box-shadow: 1px 1px 4px 1px #252525;
     margin-bottom: 10px;
     background: transparent;    
-    -webkit-transition: opacity .6s;
-    transition: opacity .6s;
+    border-radius: 4px;
+    border: 1px solid #252525;
 }
 
-.langSelection .lang > img  {
+.availablelang .lang > img  {
+    opacity: 0.7;
     cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.lang > img:hover {
+.availablelang .lang > img:hover {
     opacity: 1.0;
-    -webkit-transition: opacity .6s;
-    transition: opacity .6s;
+}
+
+.unavailablelang .lang > img  {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.unavailablelang .lang > img {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
+}
 }
 
 .selected {
     opacity: 1.0;
 }
 
-.unselected {
+/* .unselected {
     opacity: 0.5;
-}
+} */
 
 .langSelection {
     padding-bottom: 15px;
@@ -190,6 +214,8 @@ body {
     border-top: 8px solid #FFB442;
     padding-top: 10px;
     font-size: 16px;
+    font-family: 'Bree Serif', serif;
+    font-weight: 500;
 }
 
 #langdescr {
@@ -215,12 +241,27 @@ body {
 
 .game {
     width: 220px;
-    height: 220px;
+    height: 120px;
     text-align: center;
     border-radius: 4px;
     border: 1px solid #252525;
-    background-image: url("../images/placeholder.jpg");
     cursor: pointer;
+}
+
+.figure-caption {
+    padding-top: 5px;
+}
+
+#hangman {
+    background-image: url("../images/hangman.jpg");
+}
+
+#jumble {
+    background-image: url("../images/jumble.jpg");
+}
+
+#ws {
+    background-image: url("../images/wordsearch.jpg");
 }
 
 .game:hover {
@@ -271,16 +312,28 @@ body {
 #playBtn {
     width: 75px;
     height: 87px;
-    border: none;
-    border-top-color: #fff;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
     background-image: url("../images/playbtn.png");
     cursor: pointer;
 }
 
 #playBtn:hover,
 #playBtn:focus,
-#playBtn:active {
+#playBtn:active,
+#playBtn.active.focus, 
+#playBtn.active:focus, 
+#playBtn.active:hover, 
+#playBtn:active.focus, 
+#playBtn:active:focus, 
+#playBtn:active:hover
+{
     background-image: url("../images/playbtnhover.png");
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .carouselRow {
