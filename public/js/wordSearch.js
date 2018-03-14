@@ -237,6 +237,9 @@ $(".playAgainBtn").on("click", function () {
     else if (language === "es") {
         urlLang = "spanish"
     }
+    else if (language === "it") {
+        urlLang = "italian"
+    }
     else {
         urlLang = "german"
     }

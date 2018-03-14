@@ -75,6 +75,9 @@ var stateFun = (function () {
         else if (state.language === "es") {
             urlLang = "spanish"
         }
+        else if (state.language === "it") {
+            urlLang = "italian"
+        }
         else {
             urlLang = "german"
         }
