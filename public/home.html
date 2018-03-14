@@ -17,6 +17,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/home.js"></script>
     <script src="js/links.js"></script>
+<style>
+    .flag{width:80%;
+    min-height:20%;}
+</style>
 </head>
 
 <body>
@@ -41,15 +45,6 @@
                         </div>
                     </div>
                     <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                            <li id="option">
-                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
-                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,19 +56,8 @@
                                     </a>
                                 </span>
                             </li>
-                            <li id="option" class="signuplink">
-                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
-                                    SIGN UP
-                                </a>
-                            </li>
-                            <li id="option" class="loginlink">
-                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
-                            </li>
                             <li id="option" class="logoutlink">
                                 <a href="#">LOGOUT</a>
-                            </li>
-                            <li id="option" class="guestlink">
-                                <a href="#">GUEST ACCESS</a>
                             </li>
                             <li id="option">
                                 <a href="about.html">ABOUT THE TEAM</a>
@@ -90,33 +74,48 @@
                 <div class="row langSelection">
                     <div class="title-header">
                         <div class="col-md-10 col-md-offset-1 languageHeader">
-                            PICK THE LANGUAGE YOU WANT TO LEARN TODAY:
+                            <label class="step">STEP 1 : SELECT</label> A LANGUAGE YOU WANT TO LEARN TODAY
+                            <hr id="langhr">
                         </div>
 
-                        <div class="col-md-10 col-md-offset-1">
-                            <ul class="nav-tabs nav-justified">
-                                <li id="french" class="lang" value="fr">
-                                    <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
-                                </li>
-                                <li id="spanish" class="lang" value="es">
-                                    <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
-                                </li>
-                                <li id="german" class="lang" value="de">
-                                    <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
-                                </li>
-                                <li id="afrikaans" class="lang" value="af">
-                                    <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Learn Afrikaans today!" class="unselected" />
-                                </li>
-                                <li id="portugese" class="lang" value="pt">
-                                    <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Learn Portugese today!" class="unselected" />
-                                </li>
-                                <li id="hungarian" class="lang" value="hu">
-                                    <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Learn Hungarian today!" class="unselected" />
-                                </li>
-                                <li id="dutch" class="lang" value="nl">
-                                    <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Learn Dutch today!" class="unselected" />
-                                </li>
-                            </ul>
+
+                        <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
+                            <div class="col-md-6 availablelang">
+                                <div>START LEARNING NOW</div>
+                                <div>
+                                    <ul class="nav-tabs nav-justified">
+                                        <li id="french" class="lang" value="fr">
+                                            <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
+                                        </li>
+                                        <li id="spanish" class="lang" value="es">
+                                            <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
+                                        </li>
+                                        <li id="german" class="lang" value="de">
+                                            <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 unavailablelang">
+                                <div>COMING SOON!</div>
+                                <div>
+                                    <ul class="nav-tabs nav-justified">
+                                        <li id="afrikaans" class="lang" value="af">
+                                            <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Afrikaans Coming Soon!" class="unselected" />
+                                        </li>
+                                        <li id="portugese" class="lang" value="pt">
+                                            <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Portugese Coming Soon!" class="unselected" />
+                                        </li>
+                                        <li id="hungarian" class="lang" value="hu">
+                                            <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Hungarian Coming Soon!" class="unselected" />
+                                        </li>
+                                        <li id="dutch" class="lang" value="nl">
+                                            <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Dutch Coming Soon!" class="unselected" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-10 col-md-offset-1">
@@ -132,7 +131,7 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 gameHeader">
-                                    CHOOSE A GAME TO PLAY:
+                                    <label class="step">STEP 2 : CHOOSE</label> A GAME TO PLAY
                                 </div>
                             </div>
                             <div class="row">
@@ -140,19 +139,19 @@
                                     <div class="col-md-4">
                                         <figure class="figure">
                                             <img class="figure-img img-fluid rounded game unclicked" id="hangman" value="hangman" />
-                                            <figcaption class="figure-caption text-center">HANGMAN</figcaption>
+                                            <figcaption class="figure-caption text-center">PLAY THE CLASSIC GUESSING GAME</figcaption>
                                         </figure>
                                     </div>
                                     <div class="col-md-4">
                                         <figure class="figure">
                                             <img class="figure-img img-fluid rounded game unclicked" id="jumble" value="jumble" />
-                                            <figcaption class="figure-caption text-center">JUMBLE</figcaption>
+                                            <figcaption class="figure-caption text-center">UNSCRAMBLE THE WORDS</figcaption>
                                         </figure>
                                     </div>
                                     <div class="col-md-4">
                                         <figure class="figure">
                                             <img class="figure-img img-fluid rounded game unclicked" id="ws" value="ws" />
-                                            <figcaption class="figure-caption text-center">WORDSEARCH</figcaption>
+                                            <figcaption class="figure-caption text-center">FIND THE WORD IN THE HAYSTACK</figcaption>
                                         </figure>
                                     </div>
                                 </div>
@@ -162,7 +161,7 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 diffHeader">
-                                    PICK A DIFFICULTY:
+                                    <label class="step">STEP 3 : SELECT</label> A DIFFICULTY
                                 </div>
                             </div>
                             <div class="row">
@@ -182,7 +181,7 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 playHeader">
-                                    <img id="playBtn" />
+                                    <button type="button" id="playBtn"></button>
                                 </div>
                             </div>
                             <div class="row">
@@ -193,15 +192,21 @@
 
                     <div class="row">
                         <div class="col-md-12 footer">
-                            Copright© 2018 uLearn
+                            <div>Copright© 2018 uLearn</div>
+                            <div>
+                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                                </a>
+                            </div>
                         </div>
+
                     </div>
 
 
 
                 </div>
             </div>
-</div>
+        </div>
 
 </body>
 
