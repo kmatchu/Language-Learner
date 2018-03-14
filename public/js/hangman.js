@@ -133,6 +133,9 @@ var begin = function (event) {
         else if (language === "es") {
             urlLang = "spanish"
         }
+        else if (state.language === "it") {
+            urlLang = "italian"
+        }
         else {
             urlLang = "german"
         }
