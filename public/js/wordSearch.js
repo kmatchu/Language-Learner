@@ -1,13 +1,21 @@
-var useArr = sessionStorage.getItem("wordArr").split(",").splice(0,6);
+var checkArr = sessionStorage.getItem("wordArr").split(",")
+var useArr = [];
+for(var i=0;i<checkArr.length;i++){
+    if(checkArr[i].length<7){
+        useArr.push(checkArr[i]);
+    };
+};
+
+if(useArr.length>6){
+    useArr = useArr.splice(0,6);
+};
+
+var langCode = sessionStorage.getItem("lang");
 console.log(useArr);
-console.log(useArr);
+
 var boxWS = $("<div>").addClass("boxWS unoccupied wrong");
 
-// Code to propogate english hints in "Found Words" box..this is broken right now
-// var hintArr = [];
-var langCode = "fr";
-//     // var langCode = ;
-// var counter = 0
+
 var runAjax = function(counter){
     queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + useArr[counter] + "&lang=" + langCode + "-en";
     $.ajax({
@@ -16,24 +24,21 @@ var runAjax = function(counter){
         dataType: "json",
     }).then(function (response) {
         if (response.text[0] !== useArr[counter]) {
-            // hintArr.push(response.text[0]);
-            $(".word" + counter).text(response.text[0]);
-//             // setTimeout(function(){console.log(response.text[0])},2000);
-//             counter += 1;
+            $(".word" + counter).attr("title", response.text[0]);
+            $(".word" + counter).css( 'cursor', 'help' )
         }
         else {
-            $(".word" + counter).text("Hint unavailable")
-        }
-//     }).then(translate());
-});
+            $(".word" + counter).attr("title", "Hint unavailable")
+            $(".word" + counter).css( 'cursor', 'help' )
+        };
+}).done($('[data-toggle="tooltip"]').tooltip());
 };
 
 for(var i=0;i<useArr.length;i++){
-    runAjax(i)
-}
+    $(".word" + i).text(useArr[i]);
+    runAjax(i);
+};
 
-// $(document).on("click",".clicky",function(){
-//     translate();});
 
 var displArr = [
     [$(boxWS).clone().addClass("topleft"),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone().addClass("topright")],
@@ -44,7 +49,6 @@ var displArr = [
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
     [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()],
     [$(boxWS).clone().addClass("bottomleft"),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone().addClass("bottomright")]
-    // [$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone(),$(boxWS).clone()]
 ];
 
 var makeWordsSplit = function(wordArr){
