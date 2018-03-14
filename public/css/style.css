@@ -163,8 +163,7 @@ body {
     color: inherit;
 }
 
-.availablelang .lang > img,
-.unavailablelang .lang > img {
+.lang > img {
     border: 1px solid #252525;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
     box-shadow: 1px 1px 4px 1px #252525;
