@@ -55,6 +55,6 @@ FrequencyWords - <https://github.com/hermitdave/FrequencyWords> \
 
 # Original Contributors:
 
-Kevin Matthew - <https://github.com/kmatchu> \
+Kevin Mathew - <https://github.com/kmatchu> \
 Codi Steinborn  - <https://github.com/codisteinborn/> \
 Natraj Subramanian- <https://github.com/natraj-s>
