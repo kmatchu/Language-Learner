@@ -126,7 +126,7 @@ $(document).ready(function () {
         else if (language === "es") {
             urlLang = "spanish"
         }
-        else if (state.language === "it") {
+        else if (language === "it") {
             urlLang = "italian"
         }
         else {
