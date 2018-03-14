@@ -19,7 +19,6 @@ module.exports = function (app) {
   });
 
   app.get("/home", function (req, res) {
-    console.log("user:", localStorage.get("user"));
     if (localStorage.get("user") !== undefined) {
       res.sendFile(path.join(__dirname, "../public/home.html"));
     }

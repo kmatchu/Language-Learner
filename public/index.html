@@ -41,15 +41,6 @@
                         </div>
                     </div>
                     <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-                    <div class="miscLinks collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                            <li id="option">
-                                <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
-                                    <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -63,18 +54,12 @@
                             </li>
                             <li id="option" class="signuplink">
                                 <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
-                                    SIGN UP
+                                    LOGIN/SIGN UP
                                 </a>
                             </li>
-                            <li id="option" class="loginlink">
-                                <a href="/#loginModal" data-toggle="modal" data-target="#loginModal">LOGIN</a>
-                            </li>
                             <li id="option" class="logoutlink">
-                                    <a href="#">LOGOUT</a>
+                                <a href="#">LOGOUT</a>
                             </li>
-                            <li id="option" class="guestlink">
-                                <a href="#">GUEST ACCESS</a>
-                            </li>                            
                             <li id="option">
                                 <a href="about.html">ABOUT THE TEAM</a>
                             </li>
@@ -89,7 +74,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="title-header">
-                        <div class="col-md-10 col-md-offset-1">
+                        <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
                             <ul class="nav-tabs nav-justified">
                                 <li id="french" class="lang">
                                     <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" />
@@ -179,17 +164,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- LOGIN MODAL -->
-                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+
+                <!-- LOGIN/SIGNUP MODAL -->
+                <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
+                                <h4 class="modal-title" id="signupModalLabel">LOGIN WITH AN EXISTING ACCOUNT</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
+
                                 <div class="container-fluid">
                                     <form class="navbar-form navbar-left login-form" id="loginInfo">
                                         <div class="user-form-group">
@@ -202,30 +189,20 @@
                                             <p id="loginerror" class="error">&nbsp;</p>
                                         </div>
                                         <div class="row">
-                                            <div class="modal-footer">
+                                            <div class="modal-footer login-modal-footer">
                                                 <button type="submit" class="btn btn-primary loginSubmit">LOGIN</button>
-                                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
+                                                <button type="button" class="btn btn-seconday guestlink" data-dismiss="modal">CONTINUE AS GUEST</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-                <!-- SIGNUP MODAL -->
-                <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="signupModalLabel">Sign Up for an account</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
+
+
                                 <div class="container-fluid">
+                                    <div class="modal-header signup-modal-header">
+                                        <h4 class="modal-title" id="signupModalLabel">OR YOU CAN SIGN UP FOR A NEW ACCOUNT</h4>
+                                    </div>
                                     <form class="navbar-form navbar-left signup-form" id="signupForm">
                                         <div class="user-form-group">
                                             <input id="suusername" type="text" class="form-control" placeholder="USERNAME">
@@ -254,7 +231,6 @@
                                         <div class="row">
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary signupSubmit">SIGN UP</button>
-                                                <button type="button" class="btn btn-seconday guest" data-dismiss="modal">CONTINUE AS GUEST</button>
                                             </div>
                                         </div>
                                     </form>
@@ -267,8 +243,14 @@
 
                 <div class="row">
                     <div class="col-md-12 footer">
-                        Copright© 2018 uLearn
+                        <div>Copright© 2018 uLearn</div>
+                        <div>
+                            <a href="https://github.com/kmatchu/Language-Learner" target="_blank">
+                                <i class="fab fa-github fa-2x" alt="Visit our GitHub repo" title="Visit our GitHub repo"></i>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
 
 

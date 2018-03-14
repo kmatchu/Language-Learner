@@ -198,14 +198,14 @@ $(document).on("click",".clicker", function(){
         // $(".foundWords").text(displayArray.toString());
         currentGuess = [];
         if(!$(".clicker").length){
-            $("#winWSModal").modal("show");;
+            $("#winModal").modal("show");;
         };
         }
     }
 });
 
 $(document).on("click","#modalWSClose",function(){
-    $("#winWSModal").modal("hide");
+    $("#winModal").modal("hide");
 });
 
 $(document).on("click",".wrong",function(){
@@ -220,3 +220,39 @@ $(document).on("click",".highlight",function(){
     setTimeout(function(){$(".flashWrong").removeClass("flashWrong");},250);
 })
 
+var language = sessionStorage.getItem("lang");
+var difficulty = sessionStorage.getItem("diff");
+$(document).ready(function(){
+$(".returnHomeBtn").on("click", function () {
+    console.log("click");
+    window.location.href = "home.html";
+});
+
+$(".playAgainBtn").on("click", function () {
+    console.log("click");
+    var urlLang;
+    if (language === "fr") {
+        urlLang = "french"
+    }
+    else if (language === "es") {
+        urlLang = "spanish"
+    }
+    else {
+        urlLang = "german"
+    }
+    var positionArr = [];
+    var wordArr = [];
+    $.get("api/" + urlLang + "/" + difficulty, function (data) {
+        for (var i = 0; i < 10; i++) {
+            positionArr[i] = Math.floor(Math.random() * Math.floor(100));
+            // console.log(positionArr)
+        }
+        for (var i = 0; i < 10; i++) {
+            wordArr[i] = data[positionArr[i]].Word
+        }
+        sessionStorage.setItem("wordArr", wordArr);
+    }).done(function(){
+        window.location.reload(true);
+    }) 
+})
+});
