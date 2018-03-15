@@ -85,12 +85,9 @@ $(document).ready(function () {
                 win = false;
             };
         }
-        if (win) { $("#winJBModal").modal("show"); };
+        if (win) { $("#winModal").modal("show"); };
     };
 
-    // $(document).on("click", "#modalJBClose", function () {
-    //     $("#winJBModal").modal("hide");
-    // });
     // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
     $("#wordSearchBtn").on("click", function (event) {
         event.preventDefault();
@@ -128,6 +125,9 @@ $(document).ready(function () {
         }
         else if (language === "es") {
             urlLang = "spanish"
+        }
+        else if (language === "it") {
+            urlLang = "italian"
         }
         else {
             urlLang = "german"
