@@ -174,7 +174,6 @@ body {
 }
 
 .availablelang .lang > img  {
-    opacity: 0.7;
     cursor: pointer;
     transition: opacity 0.5s ease-in-out;
 }
@@ -200,9 +199,9 @@ body {
     opacity: 1.0;
 }
 
-/* .unselected {
-    opacity: 0.5;
-} */
+.unselected {
+    opacity: 0.7;
+}
 
 .langSelection {
     padding-bottom: 15px;
@@ -250,15 +249,15 @@ body {
     padding-top: 5px;
 }
 
-#hangman {
+#hangmansel {
     background-image: url("../images/hangman.jpg");
 }
 
-#jumble {
+#jumblesel {
     background-image: url("../images/jumble.jpg");
 }
 
-#ws {
+#wssel {
     background-image: url("../images/wordsearch.jpg");
 }
 
