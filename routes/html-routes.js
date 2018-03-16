@@ -19,39 +19,20 @@ module.exports = function (app) {
   });
 
   app.get("/home", function (req, res) {
-    if (localStorage.get("user") !== undefined) {
       res.sendFile(path.join(__dirname, "../public/home.html"));
-    }
-    else {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
-    }
   });
 
   app.get("/jumble", function (req, res) {
-    if (localStorage.get("user") !== undefined) {
       res.sendFile(path.join(__dirname, "../public/jumble.html"));
-    }
-    else {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
-    }
+    
   });
 
   app.get("/wordsearch", function (req, res) {
-    if (localStorage.get("user") !== undefined) {
       res.sendFile(path.join(__dirname, "../public/wordsearch.html"));
-    }
-    else {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
-    }
   });
 
   app.get("/hangman", function (req, res) {
-    if (localStorage.get("user") !== undefined) {
       res.sendFile(path.join(__dirname, "../public/hangman.html"));
-    }
-    else {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
-    }
   });
   
 

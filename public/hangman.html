@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hangman</title>
+    <title>uLEARN: Playing a game of Hangman</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -16,32 +16,15 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/links.js"></script>
-    <style>
-        .content {
-            font-size: 20px;
-            text-align: center;
-        }
-
-        #guessBlanks {
-            font-size: 50px;
-            margin: 40px 0 30px 0;
-        }
-
-        /* .modal {
-            background-color: whitesmoke;
-            height: 50%;
-            width: 60%;
-            left: 20%;
-        } */
-    </style>
 </head>
 
 <body>
     <div class="container fullPage">
+        <!-- TOP NAV BAR -->
         <nav class="navbar navbar-default">
             <div class="container-fluid navbar-custom">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="row">
+                    <!-- LEFT SIDE LOGO SECTION -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                             aria-expanded="false">
@@ -57,14 +40,13 @@
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
-                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- RIGHT SIDE LINKS SECTION -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">RETURN TO HOME
+                                    <a href="/home">RETURN TO HOME
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
@@ -73,27 +55,24 @@
                                 <a href="#">LOGOUT</a>
                             </li>
                             <li id="option">
-                                <a href="about.html">ABOUT THE TEAM</a>
+                                <a href="/about">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- /.navbar-collapse -->
                 </div>
             </div>
         </nav>
+
         <div class="wrap mainContent">
             <div class="container-fluid">
+
+                <!-- GAME HEADER -->
                 <div class="row gameTopHeader">
                     <div class="title-header">
-                        <!-- <div class="col-md-10 col-md-offset-1 gameTitleHeader">
-                            <a href="/home.html">
-                                << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a>
-                        </div> -->
 
                         <div class="col-md-10 col-md-offset-1">
                             <h3 id="gametitle">HANGMAN</h3>
-                            <hr id="gamehr">
                             <p id="gamedescr">HOW TO PLAY: The blank spaces below represent a word. A rough translation of that word is provided
                                 for you. In order to play, press a letter on your keyboard. If the guessed letter appears
                                 in the word, it will display in place of the appropriate blank. If that letter does not appear
@@ -105,7 +84,11 @@
                 </div>
 
                 <div class="row">
+
+                    <!-- HANGMAN CONTENT CONTAINER -->
                     <div class="col-md-12 contentContainer">
+
+                        <!-- HANGMAN GAME -->
                         <div class="content">
                             <div class="row">
                                 <div class="col-xs-12" id="guessBlanks" type="text"> </div>
@@ -134,16 +117,15 @@
                                 <div class="col-xs-6" id="loss"></div>
                             </div>
                         </div>
+
                     </div>
 
+                    <!-- WIN MODAL -->
                     <div class="modal fade" id="winModal" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">CONGRATS! </h4>
-                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button> -->
                                 </div>
                                 <div class="modal-body gamewinmodalbody">
                                     <p>
@@ -156,6 +138,7 @@
                         </div>
                     </div>
 
+                    <!-- FOOTER -->
                     <div class="row">
                         <div class="col-md-12 footer">
                             <div>Copright© 2018 uLearn</div>
@@ -165,9 +148,10 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>

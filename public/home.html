@@ -17,20 +17,15 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/home.js"></script>
     <script src="js/links.js"></script>
-    <style>
-        .flag {
-            width: 80%;
-            min-height: 20%;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container fullPage">
+        <!-- TOP NAV-BAR -->
         <nav class="navbar navbar-default">
             <div class="container-fluid navbar-custom">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="row">
+                    <!-- LEFT SIDE LOGO SECTION -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                             aria-expanded="false">
@@ -46,14 +41,13 @@
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
-                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                   
+                    <!-- RIGHT SIDE LINKS SECTION -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
                                 <span id="userGreeting">
-                                    <a href="home.html">WELCOME
+                                    <a href="/home">WELCOME
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
@@ -62,25 +56,26 @@
                                 <a href="#">LOGOUT</a>
                             </li>
                             <li id="option">
-                                <a href="about.html">ABOUT THE TEAM</a>
+                                <a href="/about">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- /.navbar-collapse -->
                 </div>
             </div>
         </nav>
+
         <div class="wrap mainContent">
             <div class="container-fluid">
+
+                <!-- LANGUAGE BANNER -->                
                 <div class="row langSelection">
                     <div class="title-header">
                         <div class="col-md-10 col-md-offset-1 languageHeader">
                             <label class="step">STEP 1 : SELECT</label> A LANGUAGE YOU WANT TO LEARN TODAY
                             <hr id="langhr">
                         </div>
-
-
+                        <!-- LEFT SIDE LANGUAGE SELECTION -->
                         <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
                             <div class="col-md-6 availablelang">
                                 <div>START LEARNING NOW</div>
@@ -101,7 +96,7 @@
                                     </ul>
                                 </div>
                             </div>
-
+                            <!-- RIGHT SIDE LANGUAGE SELECTION -->
                             <div class="col-md-6 unavailablelang">
                                 <div>COMING SOON!</div>
                                 <div>
@@ -122,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- LANGUAGE TITLE AND DESCRIPTION -->
                         <div class="col-md-10 col-md-offset-1">
                             <h3 id="langtitle">&nbsp;</h3>
                             <hr id="langhr">
@@ -131,8 +126,11 @@
                     </div>
                 </div>
 
+                <!-- MAIN SELECTION SCREEN -->
                 <div class="row">
                     <div class="col-md-12 contentContainer">
+
+                        <!-- GAME SELECTION SECTION -->
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 gameHeader">
@@ -163,6 +161,7 @@
                             </div>
                         </div>
 
+                        <!-- DIFFICULTY SELECTION SECTION -->
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 diffHeader">
@@ -183,6 +182,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- PLAY BUTTON -->
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 playHeader">
@@ -192,9 +193,11 @@
                             <div class="row">
                                 <div class="gameErr"></div>
                             </div>
-                        </div>
+                        </div>        
+
                     </div>
 
+                    <!-- FOOTER -->
                     <div class="row">
                         <div class="col-md-12 footer">
                             <div>Copright© 2018 uLearn</div>
@@ -204,10 +207,7 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
-
-
 
                 </div>
             </div>
