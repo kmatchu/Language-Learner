@@ -43,8 +43,8 @@ var stateFun = (function () {
         $(".figure > img").removeClass("clicked");
         $(".figure > img").removeClass("unclicked");
         $(".figure > img").addClass("unclicked");
-        $("#" + gameState).removeClass("unclicked");
-        $("#" + gameState).addClass("clicked");
+        $("#" + gameState + "sel").removeClass("unclicked");
+        $("#" + gameState + "sel").addClass("clicked");
 
         state.game = gameState;
         sessionStorage.setItem("game", gameState);

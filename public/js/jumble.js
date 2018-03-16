@@ -55,6 +55,11 @@ $(document).ready(function () {
         newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div>" +
         "</div>"));
 
+    $(".jumbleform").on("keydown", function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+        }
+    });
 
     //  This onclick function checks if the user has un-scrambled the word correctly
     $(".jumbleform").on("blur", function (e) {
@@ -143,7 +148,7 @@ $(document).ready(function () {
                 wordArr[i] = data[positionArr[i]].Word
             }
             sessionStorage.setItem("wordArr", wordArr);
-        }).done(function(){
+        }).done(function () {
             window.location.reload(true);
         });
     });
