@@ -180,6 +180,7 @@ body {
 
 .availablelang .lang > img:hover {
     opacity: 1.0;
+    width: 100px;
 }
 
 .unavailablelang .lang > img  {
@@ -470,4 +471,23 @@ body {
 .flag{
     width:100%
 }
+@keyframes example {
+    50%  {font-size: 30px;}
 
+}
+
+#s1 {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+#s2 {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+#s3 {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 3s;
+}

@@ -41,7 +41,7 @@
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
-                   
+
                     <!-- RIGHT SIDE LINKS SECTION -->
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
@@ -68,11 +68,11 @@
         <div class="wrap mainContent">
             <div class="container-fluid">
 
-                <!-- LANGUAGE BANNER -->                
+                <!-- LANGUAGE BANNER -->
                 <div class="row langSelection">
                     <div class="title-header">
                         <div class="col-md-10 col-md-offset-1 languageHeader">
-                            <label class="step">STEP 1 : SELECT</label> A LANGUAGE YOU WANT TO LEARN TODAY
+                            <label class="step" id="s1">STEP 1 : SELECT</label> A LANGUAGE YOU WANT TO LEARN TODAY
                             <hr id="langhr">
                         </div>
                         <!-- LEFT SIDE LANGUAGE SELECTION -->
@@ -81,16 +81,17 @@
                                 <div>START LEARNING NOW</div>
                                 <div>
                                     <ul class="nav-tabs nav-justified">
-                                        <li id="french" class="lang" value="fr">
+                                        <li id="french" class="lang sliding-link" value="fr">
+                                            <a></a>
                                             <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
                                         </li>
-                                        <li id="spanish" class="lang" value="es">
+                                        <li id="spanish" class="lang sliding-link" value="es">
                                             <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
                                         </li>
-                                        <li id="german" class="lang" value="de">
+                                        <li id="german" class="lang sliding-link" value="de">
                                             <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
                                         </li>
-                                        <li id="italian" class="lang" value="it">
+                                        <li id="italian" class="lang sliding-link" value="it">
                                             <img src="images/italytn.png" alt="Learn Italian today!" title="Learn Italian today!" class="unselected" />
                                         </li>
                                     </ul>
@@ -133,8 +134,8 @@
                         <!-- GAME SELECTION SECTION -->
                         <div class="content">
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1 gameHeader">
-                                    <label class="step">STEP 2 : CHOOSE</label> A GAME TO PLAY
+                                <div class="col-md-10 col-md-offset-1 gameHeader" id="gameHead">
+                                    <label class="step" id="s2">STEP 2 : CHOOSE</label> A GAME TO PLAY
                                 </div>
                             </div>
                             <div class="row">
@@ -165,7 +166,7 @@
                         <div class="content">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 diffHeader">
-                                    <label class="step">STEP 3 : SELECT</label> A DIFFICULTY
+                                    <label class="step" id="s3">STEP 3 : SELECT</label> A DIFFICULTY
                                 </div>
                             </div>
                             <div class="row">
@@ -193,7 +194,7 @@
                             <div class="row">
                                 <div class="gameErr"></div>
                             </div>
-                        </div>        
+                        </div>
 
                     </div>
 
