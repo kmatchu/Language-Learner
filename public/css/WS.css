@@ -20,7 +20,7 @@ color: #333;
         cursor: default;
 }
 
-.boxWS:hover {
+.boxWS:hover:not(.flashWrong) {
     background-color: #FFB442;
 }
 
