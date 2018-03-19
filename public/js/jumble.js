@@ -136,8 +136,13 @@ $(document).ready(function () {
         var wordArr = [];
         $.get("api/" + urlLang + "/" + difficulty, function (data) {
             for (var i = 0; i < 10; i++) {
-                positionArr[i] = Math.floor(Math.random() * Math.floor(100));
-                // console.log(positionArr)
+                var spot = Math.floor(Math.random() * Math.floor(100));
+                if(positionArr.indexOf(spot)!==-1){
+                    i--;
+                }
+                else{
+                    positionArr[i] = spot;
+                };
             }
             for (var i = 0; i < 10; i++) {
                 wordArr[i] = data[positionArr[i]].Word
