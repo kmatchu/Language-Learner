@@ -1,10 +1,6 @@
 $(document).ready(function () {
     var username = "";
-
-    let loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" +
-                    "ut labore et dolore magna aliqua. Amet consectetur adipiscing elit ut aliquam purus. Non" +
-                    "consectetur a erat nam at lectus urna duis. Pellentesque sit amet porttitor eget dolor morbi non."
-
+    
     var langDescr = {
        "french": "French is a Romance language of the Indo-European family. It is the official language in 29 countries across five different continents, and is estimated to have about 76 million native speakers.",
         "spanish": "The Spanish language, also called the Castilian language, is a Western Romance language that originated in the Castile region of Spain and today has hundreds of millions of native speakers around the world. It is usually considered the world's second-most spoken native language.",

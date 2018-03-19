@@ -12,6 +12,7 @@ var losses = 0;
 var allGuess = [];
 var isMatch = false;
 
+// following code comes from Stack Overflow
 var translate_re = /[¹²³áàâãäåaaaÀÁÂÃÄÅAAAÆccç©CCÇÐÐèéê?ëeeeeeÈÊË?EEEEE€gGiìíîïìiiiÌÍÎÏ?ÌIIIlLnnñNNÑòóôõöoooøÒÓÔÕÖOOOØŒr®Ršs?ßŠS?ùúûüuuuuÙÚÛÜUUUUýÿÝŸžzzŽZZ]/g;
 var translate = {
     "¹": "1", "²": "2", "³": "3", "á": "a", "à": "a", "â": "a", "ã": "a", "ä": "a", "å": "a", "a": "a", "a": "a", "a": "a", "À": "a", "Á": "a", "Â": "a", "Ã": "a", "Ä": "a", "Å": "a", "A": "a", "A": "a",
@@ -23,18 +24,23 @@ var translate = {
     "U": "u", "U": "u", "U": "u", "U": "u", "ý": "y", "ÿ": "y", "Ý": "y", "Ÿ": "y", "ž": "z", "z": "z", "z": "z", "Ž": "z", "Z": "z", "Z": "z"
 };
 
-// // following code from Stack Overflow
 makeSortString = (function () {
     return function (s) {
         return (s.replace(translate_re, function (match) { return translate[match]; }));
     }
 })();
+
 var winWordRandNA = makeSortString(winWordRand);
 console.log(winWordRandNA, "wwrna")
 //
 
+/**
+ *  This function runs an ajax call to the Yandex API to look up the english translation of the inputted word
+ * @param {string} winWordRand - this is the word the user enters to look up
+ * @param {string} langauge - this indicates to our queryURL which language we are translating from
+ * @returns {string} response.text - this is the response we got from our ajax call
+*/
 var yandex = function () {
-
     queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + winWordRand + "&lang=" + language + "-en";
     $.ajax({
         url: queryURL,
@@ -51,6 +57,9 @@ var yandex = function () {
 };
 yandex();
 
+/**
+ * This function renders our information to the page
+ */
 var render = function () {
     $("#guessesRemain").text(lives);
     $("#win").text(wins);
@@ -59,6 +68,9 @@ var render = function () {
 }
 render();
 
+/**
+ * This function runs our game
+ */
 var begin = function (event) {
     var guess = (event.key).toLowerCase();
     var isMatch = false;
@@ -70,6 +82,12 @@ var begin = function (event) {
         allGuess.push(guess);
     }
 
+    /**
+     * This function checks to see whether the user's guess is in the winning word or not. If it is the letter appears where it should be in the word.
+     * @param {string} - guess represents the user's guess
+     * @param {array} - winWordRandNA is the winning word (without accents) split into an array
+     * @param {array} - uArr is the array of _ representing the winning word
+     */
     for (var i = 0; i < winWordRandNA.length; i++) {
         if (winWordRandNA.includes(guess) && lives > 0) {
             if (winWordRandNA[i] === guess) {
@@ -119,11 +137,17 @@ var begin = function (event) {
     render();
     yandex();
 
+    /**
+     * This onclick function directs the user to the home page
+    */
     $(".returnHomeBtn").on("click", function () {
         console.log("click");
         window.location.href = "home.html";
     });
 
+    /**
+     * This onclick function runs a get request to get a new array of words for the user and stores them in session storage then reloads this page
+    */
     $(".playAgainBtn").on("click", function () {
         console.log("click");
         var urlLang;
