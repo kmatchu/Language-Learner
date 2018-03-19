@@ -2,6 +2,11 @@
     padding-bottom: 15px;
 }
 
+.emphasis {
+    text-decoration: none;
+    font-weight: 800;
+}
+
 .gameTitleHeader {
     border-top: 8px solid #FFB442;
     padding-top: 10px;
@@ -10,6 +15,10 @@
 
 #gamedescr {
     text-align: justify;
+    background-color: #FFB442;
+    border-radius: 4px;
+    border: 1px dotted #252525;
+    padding: 20px;
 }
 
 #gametitle  {
@@ -23,6 +32,16 @@
 #gamehr {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.content {
+    font-size: 20px;
+    text-align: center;
+}
+
+#guessBlanks {
+    font-size: 50px;
+    margin: 40px 0 30px 0;
 }
 
 .jumbleGame {

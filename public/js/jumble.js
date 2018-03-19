@@ -7,7 +7,7 @@ console.log(difficulty);
 var wordArray = sessionStorage.getItem("wordArr").split(",")
 console.log(wordArray);
 
-// // following code from Stack Overflow
+// following code comes from Stack Overflow
 makeSortString = (function () {
     var translate_re = /[¹²³áàâãäåaaaÀÁÂÃÄÅAAAÆccç©CCÇÐÐèéê?ëeeeeeÈÊË?EEEEE€gGiìíîïìiiiÌÍÎÏ?ÌIIIlLnnñNNÑòóôõöoooøÒÓÔÕÖOOOØŒr®Ršs?ßŠS?ùúûüuuuuÙÚÛÜUUUUýÿÝŸžzzŽZZ]/g;
     var translate = {
@@ -23,10 +23,14 @@ makeSortString = (function () {
         return (s.replace(translate_re, function (match) { return translate[match]; }));
     }
 })();
-
+//
 
 $(document).ready(function () {
-    //  This section contains the array of words to scramble (wordArray) and then scrambles each word in the array (newWordArr)
+    /**
+    *This function helps up scramble up the letters so that we can give them to the user to unscramble
+    *@param {string} word - takes in the word we want to scramble
+    *@returns {string} shuffledWord - returns the word we took in with its characters in a mixed up order
+    */
     function shuffleWord(word) {
         var shuffledWord = '';
         word = word.split('');
@@ -36,34 +40,46 @@ $(document).ready(function () {
         return shuffledWord;
     }
 
+    /**
+    *These functions create new arrays from our original array of words
+    *@param {array} wordArray - takes in the original array of words
+    *@returns {array} newWordArray - returns a new array with words scrambled up
+    *@returns {array} wordArrayNA - returns a new array with characters with accents replaced by that character without the accent
+    */
     var newWordArr = wordArray.map(elem => shuffleWord(elem));
     var wordArrayNA = wordArray.map(elem => makeSortString(elem));
-    // console.log(wordArrayNA, "wana")
-
     for (var i = 0; i < newWordArr.length; i++) {
         if (newWordArr[i] === wordArray[i]) {
             shuffleWord(newWordArr[i])
         }
     }
-    // console.log(newWordArr);
 
-    // let buttonCreate = "";
-
+    /**
+    *This function dynamically places our scrambled words on the page with forms below for users to input their answers
+    *@param {array} newWordArray - takes in the array of scrambled words
+    *@returns returns multiple divs which display the scrambled word as well as a corresponding form for the user to type in the unscrambled word
+    */
     newWordArr.forEach(elem => $("#jumble").append("<div class='wordCol col-md-4'>" +
         "<div id='word" + newWordArr.indexOf(elem) + "'>" +
         elem + "</div> <div> <form> <input class='form-control jumbleform' id='jumbleGuess" +
         newWordArr.indexOf(elem) + "' placeholder='Unscramble here'></input> </form> </div>" +
         "</div>"));
 
+    $(".jumbleform").on("keydown", function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+        }
+    });
 
-    //  This onclick function checks if the user has un-scrambled the word correctly
+    /**
+     * This function checks whether the user unscrambled the word correctly or not
+     * @param {}
+     */
     $(".jumbleform").on("blur", function (e) {
         let pos = $(this).attr("id").slice(11);
         let userGuess = $(this).val().toLowerCase();
 
         if ($("#jumbleGuess" + [pos]).val().toLowerCase() === wordArrayNA[pos]) {
-            // $("#correct" + [i]).text(" Correct!");
-
             $(this).removeClass("incorrect");
             $(this).addClass("correct");
             $(this).attr("readonly", "readonly");
@@ -74,10 +90,13 @@ $(document).ready(function () {
         else {
             $(this).addClass("incorrect");
         }
-        // }
     });
 
-
+/**
+ * This function checks to see when the user has won the game by unscrambling all words from our array correctly
+ * @param {array} wordArray - our original array of words
+ * @returns - when user has won the game this function triggers a modal to show
+ */
     var checkWin = function () {
         var win = true;
         for (var i = 0; i < wordArray.length; i++) {
@@ -88,12 +107,16 @@ $(document).ready(function () {
         if (win) { $("#winModal").modal("show"); };
     };
 
-    // This onclick function takes the user input and runs our ajax call to Yandex's API to find a translation to english for it
-    $("#wordSearchBtn").on("click", function (event) {
+    /**
+     *  This function runs an ajax call to the Yandex API to look up the english translation of the inputted word
+     * @param {string} searchWord - this is the word the user enters to look up
+     * @param {string} langauge - this indicates to our queryURL which language we are translating from
+     * @returns {string} response.text - this is the response we got from our ajax call
+    */
+     $("#wordSearchBtn").on("click", function (event) {
         event.preventDefault();
         $("#lookup").text("");
         var searchWord = $("#wordInput").val();
-
         queryURL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180305T185504Z.d82e099867176c62.926d780dfe710515cb00f16a16c48bd887c06819&%20&text=" + searchWord + "&lang=" + language + "-en";
         $.ajax({
             url: queryURL,
@@ -112,11 +135,16 @@ $(document).ready(function () {
         })
     });
 
+/**
+ * This onclick function directs the user to the home page
+ */
     $(".returnHomeBtn").on("click", function () {
         console.log("click");
         window.location.href = "home.html";
     });
-
+/**
+ * This onclick function runs a get request to get a new array of words for the user and stores them in session storage then reloads this page
+ */
     $(".playAgainBtn").on("click", function () {
         console.log("click");
         var urlLang;
@@ -143,12 +171,13 @@ $(document).ready(function () {
                 else{
                     positionArr[i] = spot;
                 };
+
             }
             for (var i = 0; i < 10; i++) {
                 wordArr[i] = data[positionArr[i]].Word
             }
             sessionStorage.setItem("wordArr", wordArr);
-        }).done(function(){
+        }).done(function () {
             window.location.reload(true);
         });
     });

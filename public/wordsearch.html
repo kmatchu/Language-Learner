@@ -19,26 +19,15 @@
         crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
     <script src="js/links.js"></script>
-    <style>
-  /* .wordKey + .tooltip > .tooltip-inner {
-      background-color: #73AD21; 
-      color: #FFFFFF; 
-      border: 1px solid green; 
-      padding: 15px;
-      font-size: 20px;
-  }
-    .wordKey + .tooltip.right > .tooltip-arrow {
-      border-right: 5px solid black;
-  } */
-</style>
 </head>
 
 <body>
     <div class="container fullPage">
+        <!-- TOP NAV BAR -->
         <nav class="navbar navbar-default">
             <div class="container-fluid navbar-custom">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="row">
+                <!-- LEFT SIDE LOGO SECTION -->                    
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                             aria-expanded="false">
@@ -54,9 +43,8 @@
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
                     </div>
-                    <!-- <div class="navbar-collapse" id="bs-example-navbar-collapse-1"> -->                    
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- RIGHT SIDE LINKS SECTION -->                    
                     <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right navbar-right-custom">
                             <li id="option" class="welcomemsg">
@@ -65,39 +53,45 @@
                                         <label id="userInfo"></label>
                                     </a>
                                 </span>
-                            </li>                            
+                            </li>
                             <li id="option" class="logoutlink">
                                 <a href="#">LOGOUT</a>
-                            </li>                            
+                            </li>
                             <li id="option">
                                 <a href="about.html">ABOUT THE TEAM</a>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- /.navbar-collapse -->
                 </div>
             </div>
         </nav>
+
         <div class="wrap mainContent">
             <div class="container-fluid">
+
+                <!-- GAME HEADER -->                
                 <div class="row gameTopHeader">
                     <div class="title-header">
-                        <div class="col-md-10 col-md-offset-1 gameTitleHeader">
-                            <!-- <a href="/home.html">
-                            << GO BACK TO USER HOMEPAGE AND GAME SELECTION</a> -->
-                        </div>
-
                         <div class="col-md-10 col-md-offset-1">
                             <h3 id="gametitle">WORD SEARCH</h3>
-                            <hr id="gamehr">
-                            <p id="gamedescr">Find all the hidden words. Click letters to spell out your guess!</p>
+                            <p id="gamedescr">HOW TO PLAY: In the grid are some hidden words. The <b>Word Key</b> contains the words
+                                that you have to find hidden within the grid. The words can be hidden either 
+                                horizontally or vertically. Click the letters to spell out your guess! Note 
+                                that the order in which you click matters. FOR TRANSLATION, hover over the words in 
+                                the Word Key.
+                            </p>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
+
+                    <!-- WORDSEARCH CONTENT CONTAINER -->                    
                     <div class="col-md-12 contentContainer">
                         <div class="content">
+
+                            <!-- WORDSEARCH GAME -->                            
                             <div class="row wsRow">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 wsHeader">
@@ -139,16 +133,16 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
+                    <!-- WIN MODAL -->
                     <div class="modal fade" id="winModal" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">CONGRATS! </h4>
-                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button> -->
                                 </div>
                                 <div class="modal-body gamewinmodalbody">
                                     <p>
@@ -160,7 +154,10 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+                <!-- FOOTER -->
                 <div class="row">
                     <div class="col-md-12 footer">
                         <div>Copright© 2018 uLearn</div>
@@ -170,8 +167,8 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
