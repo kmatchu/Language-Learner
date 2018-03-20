@@ -36,7 +36,7 @@
                         </button>
                         <div class="col-xs-12 phone-nav">
                             <p>
-                                <a class="navbar-brand" href="/" id="logo">uLEARN</a>
+                                <label class="navbar-brand" id="logo">uLEARN</label>
                             </p>
                             <p id="logo-subtext">Your personal language companion</p>
                         </div>
@@ -70,51 +70,53 @@
 
                 <!-- LANGUAGE BANNER -->
                 <div class="row langSelection">
-                    <div class="title-header">
+                    <div>
                         <div class="col-md-10 col-md-offset-1 languageHeader">
                             <label class="step" id="s1">STEP 1 : SELECT</label> A LANGUAGE YOU WANT TO LEARN TODAY
                             <hr id="langhr">
                         </div>
                         <!-- LEFT SIDE LANGUAGE SELECTION -->
-                        <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
-                            <div class="col-md-6 availablelang">
-                                <div>START LEARNING NOW</div>
-                                <div>
-                                    <ul class="nav-tabs nav-justified">
-                                        <li id="french" class="lang sliding-link" value="fr">
-                                            <a></a>
-                                            <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
-                                        </li>
-                                        <li id="spanish" class="lang sliding-link" value="es">
-                                            <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
-                                        </li>
-                                        <li id="german" class="lang sliding-link" value="de">
-                                            <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
-                                        </li>
-                                        <li id="italian" class="lang sliding-link" value="it">
-                                            <img src="images/italytn.png" alt="Learn Italian today!" title="Learn Italian today!" class="unselected" />
-                                        </li>
-                                    </ul>
+                        <div class="container">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-6 availablelang">
+                                    <div class="availHeader">START LEARNING NOW</div>
+                                    <div>
+                                        <ul class="nav-tabs nav-justified">
+                                            <li id="french" class="lang sliding-link" value="fr">
+                                                <a></a>
+                                                <img src="images/frenchtn.png" alt="Learn French today!" title="Learn French today!" class="unselected" />
+                                            </li>
+                                            <li id="spanish" class="lang sliding-link" value="es">
+                                                <img src="images/spaintn.png" alt="Learn Spanish today!" title="Learn Spanish today!" class="unselected" />
+                                            </li>
+                                            <li id="german" class="lang sliding-link" value="de">
+                                                <img src="images/germanytn.png" alt="Learn German today!" title="Learn German today!" class="unselected" />
+                                            </li>
+                                            <li id="italian" class="lang sliding-link" value="it">
+                                                <img src="images/italytn.png" alt="Learn Italian today!" title="Learn Italian today!" class="unselected" />
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- RIGHT SIDE LANGUAGE SELECTION -->
-                            <div class="col-md-6 unavailablelang">
-                                <div>COMING SOON!</div>
-                                <div>
-                                    <ul class="nav-tabs nav-justified">
-                                        <li id="afrikaans" class="lang" value="af">
-                                            <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Afrikaans Coming Soon!" />
-                                        </li>
-                                        <li id="portugese" class="lang" value="pt">
-                                            <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Portugese Coming Soon!" />
-                                        </li>
-                                        <li id="hungarian" class="lang" value="hu">
-                                            <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Hungarian Coming Soon!" />
-                                        </li>
-                                        <li id="dutch" class="lang" value="nl">
-                                            <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Dutch Coming Soon!" />
-                                        </li>
-                                    </ul>
+                                <!-- RIGHT SIDE LANGUAGE SELECTION -->
+                                <div class="col-md-6 unavailablelang">
+                                    <div class="unavailHeader">COMING SOON!</div>
+                                    <div>
+                                        <ul class="nav-tabs nav-justified">
+                                            <li id="afrikaans" class="lang" value="af">
+                                                <img src="images/southafricatn.png" alt="Learn Afrikaans today!" title="Afrikaans Coming Soon!" />
+                                            </li>
+                                            <li id="portugese" class="lang" value="pt">
+                                                <img src="images/portugaltn.png" alt="Learn Portugese today!" title="Portugese Coming Soon!" />
+                                            </li>
+                                            <li id="hungarian" class="lang" value="hu">
+                                                <img src="images/hungarytn.png" alt="Learn Hungarian today!" title="Hungarian Coming Soon!" />
+                                            </li>
+                                            <li id="dutch" class="lang" value="nl">
+                                                <img src="images/netherlandstn.png" alt="Learn Dutch today!" title="Dutch Coming Soon!" />
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -172,13 +174,13 @@
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 diffSel">
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary diff" id="easy" value="easy">EASY</button>
+                                        <button type="button" class="btn btn-primary diff unchosen" id="easy" value="easy">EASY</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary diff" id="medium" value="medium">MEDIUM</button>
+                                        <button type="button" class="btn btn-primary diff unchosen" id="medium" value="medium">MEDIUM</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary diff" id="hard" value="hard">HARD</button>
+                                        <button type="button" class="btn btn-primary diff unchosen" id="hard" value="hard">HARD</button>
                                     </div>
                                 </div>
                             </div>
