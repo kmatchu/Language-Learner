@@ -76,7 +76,7 @@ body {
     font-family: 'Dosis', sans-serif;
     text-transform: uppercase;
     text-align: left;
-    /* display: none; */
+    display: none;
 }
 
 .navbar.navbar-default {
@@ -555,4 +555,5 @@ body {
   .pong{
       text-align: left;
       padding-left: 52.5px;
+      padding-bottom: 10px;
   }
