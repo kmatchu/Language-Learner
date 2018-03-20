@@ -378,6 +378,9 @@ body {
 }
 
 .carousel-caption {
+    height: auto;
+    width: 40%;
+    margin: 0 auto;
     border-radius: 4px;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
     box-shadow: 1px 1px 4px 1px #252525;
