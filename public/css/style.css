@@ -76,7 +76,7 @@ body {
     font-family: 'Dosis', sans-serif;
     text-transform: uppercase;
     text-align: left;
-    display: none;
+    /* display: none; */
 }
 
 .navbar.navbar-default {
@@ -533,7 +533,7 @@ body {
   .bar {
     background: rgb(0, 0, 0);
     width: 5px;
-    height: 20px;
+    height: 22px;
   }
   .bar1 {
     float: left;
@@ -548,4 +548,8 @@ body {
     position: relative;
     top: 5px;
     left: 10px;
+  }
+  .pong{
+      text-align: left;
+      padding-left: 52.5px;
   }

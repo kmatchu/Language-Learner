@@ -27,7 +27,7 @@
             <div class="container-fluid navbar-custom">
                 <div class="row">
                     <!-- LEFT SIDE LOGO SECTION -->
-                    <div class="navbar-header">
+                    <div class="navbar-header col-md-12">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                             aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
@@ -35,45 +35,58 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <div class="col-xs-12 phone-nav">
-                            <p>
-                                <label class="navbar-brand" id="logo">uLEARN</label>
-                            </p>
-                            <div class="cont">  
-                                <div class="bar bar1"></div>
-                                <div class="ball"></div>
-                                <div class="bar bar2"></div>
-                              <div>
-                            <!-- <p id="logo-subtext">Your personal language companion</p> -->
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 phone-nav">
+                                <p>
+                                    <label class="navbar-brand" id="logo">uLEARN</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-md-6 pong">
+                                    <div class="cont">
+                                        <div class="bar bar1"></div>
+                                        <div class="ball"></div>
+                                        <div class="bar bar2"></div>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                            <div class="row">
+                                <div class="col-md-6"> -->
+                                    <!-- <p id="logo-subtext">Your personal language companion</p> -->
+                                <!-- </div>
+                                </div> -->
+
+                                <!-- RIGHT SIDE LINKS SECTION -->
+                                <div class="col-md-6">
+                                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
+                                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                                            <li id="option" class="welcomemsg">
+                                                <span id="userGreeting">
+                                                    <a href="/home">WELCOME
+                                                        <label id="userInfo"></label>
+                                                    </a>
+                                                </span>
+                                            </li>
+                                            <li id="option" class="signuplink">
+                                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
+                                                    LOGIN/SIGN UP
+                                                </a>
+                                            </li>
+                                            <li id="option" class="logoutlink">
+                                                <a href="#">LOGOUT</a>
+                                            </li>
+                                            <li id="option">
+                                                <a href="/about">ABOUT THE TEAM</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- RIGHT SIDE LINKS SECTION -->
-                    <div class="links collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
-                        <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                            <li id="option" class="welcomemsg">
-                                <span id="userGreeting">
-                                    <a href="/home">WELCOME
-                                        <label id="userInfo"></label>
-                                    </a>
-                                </span>
-                            </li>
-                            <li id="option" class="signuplink">
-                                <a href="/#signupModal" data-toggle="modal" data-target="#signupModal">
-                                    LOGIN/SIGN UP
-                                </a>
-                            </li>
-                            <li id="option" class="logoutlink">
-                                <a href="#">LOGOUT</a>
-                            </li>
-                            <li id="option">
-                                <a href="/about">ABOUT THE TEAM</a>
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
-            </div>
         </nav>
 
 
@@ -283,7 +296,7 @@
 
             </div>
         </div>
-    </div>
+        </div>
 
 
 </body>
