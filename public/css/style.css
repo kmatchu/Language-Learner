@@ -524,3 +524,28 @@ body {
     animation-duration: 2s;
     animation-delay: 3s;
 }
+
+.cont {
+    width: 250px;
+    display: inline-block;
+    text-align: left
+  }
+  .bar {
+    background: rgb(0, 0, 0);
+    width: 5px;
+    height: 20px;
+  }
+  .bar1 {
+    float: left;
+  }
+  .bar2 {
+    float: right;
+  }
+  .ball {
+    background: rgb(255, 179, 65);
+    width: 5px;
+    height: 3px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+  }
