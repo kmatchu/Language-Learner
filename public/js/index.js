@@ -2,6 +2,78 @@ $(document).ready(function () {
     var loginForm = $("#loginInfo");
     var signupForm = $("#signupForm");
 
+    /**
+     * amie.js code
+     */
+    var loop = true;
+    var easing = 'linear';
+    var direction = 'alternate';
+    anime({
+      targets: '.ball',
+      translateX: 235,
+      translateY: 12.5,
+      easing,
+      loop,
+      direction,
+    })
+    var ballTimeline = anime.timeline({
+      loop,
+      direction
+    })
+    var bar2Timeline = anime.timeline({
+      loop,
+      direction
+    })
+    var bar1Timeline = anime.timeline({
+      loop,
+      direction
+    })
+    ballTimeline
+    .add({
+      targets: '.ball',
+      translateY: 10,
+      translateX: 235,
+      easing
+    }).add({
+      targets: '.ball',
+      translateY: 0,
+      translateX: 0,
+      easing
+    }).add({
+      targets: '.ball',
+      translateY: '-10',
+      translateX: 235,
+      easing
+    })
+    bar2Timeline
+    .add({
+      targets: '.bar2',
+      translateY: 10,
+      easing,
+    }).add({
+      targets: '.bar2',
+      translateY: 0,
+      easing,
+    }).add({
+      targets: '.bar2',
+      translateY: '-10',
+      easing,
+    })
+    bar1Timeline
+    .add({
+      targets: '.bar1',
+      translateY: '-10',
+      easing,
+    }).add({
+      targets: '.bar1',
+      translateY: 0,
+      easing,
+    }).add({
+      targets: '.bar1',
+      translateY: 10,
+      easing,
+    })
+
     // $(".item").on("click", function() {
     //     $(".carousel").carousel("pause");
     // });
