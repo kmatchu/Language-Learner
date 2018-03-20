@@ -218,7 +218,7 @@ $(document).on("click", ".clicker", function () {
     $(this).addClass("highlight");
     for (var i = 0; i < makeWordsSplit(useArr).length; i++) {
         if (makeWordsSplit(useArr)[i].toString() === currentGuess.toString()) {
-            $(".highlight").addClass("correct").removeClass("clicker").removeClass("highlight");
+            $(".highlight").addClass("wscorrect").removeClass("clicker").removeClass("highlight");
             $(".word" + i).addClass("greenText").text(currentGuess.toString().replace(/,/g, "")).removeClass("fadedText");
             currentGuess = [];
             if (!$(".clicker").length) {
