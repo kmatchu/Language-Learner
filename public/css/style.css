@@ -65,6 +65,9 @@ body {
     color: #000;
     font-family: 'Bree Serif', serif;
     line-height: 1;
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #logo-subtext {
@@ -83,7 +86,12 @@ body {
     border-bottom-left-radius: 0;
 }
 
-.navbar-header, .phone-nav, .navbar-brand {
+.title-header {
+    padding-top: 15px;
+}
+
+/* .navbar-header, .phone-nav,  */
+.navbar-brand {
     height: auto;
 }
 
@@ -102,17 +110,17 @@ body {
     font-size: 15px;
     font-family: 'Abel', sans-serif;
     font-weight: 600;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0; */
     margin-right: 10px;
 }
 
-.navbar-toggle, .navbar-toggle:hover {
+/* .navbar-toggle, .navbar-toggle:hover {
     position: absolute;
     bottom: 0;
     right: 0;
-}
+} */
 
 #userGreeting {
     padding-top: 15px;
@@ -143,7 +151,7 @@ body {
 
 .nav-tabs.nav-justified {
     margin-bottom: 0;
-    padding-top: 15px;
+    /* padding-top: 15px; */
     padding-bottom: 0;
     padding-left: 0;
     list-style: none;
@@ -161,6 +169,11 @@ body {
 
 .nav-tabs.nav-justified a:hover {
     color: inherit;
+}
+
+.availHeader, .unavailHeader{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .lang > img {
@@ -198,6 +211,7 @@ body {
 
 .selected {
     opacity: 1.0;
+    width: 100px;
 }
 
 .unselected {
@@ -206,6 +220,15 @@ body {
 
 .langSelection {
     padding-bottom: 15px;
+}
+
+.langFlags {
+    margin-bottom: 30px;
+}
+
+.langSeparator {
+    height: 50px;
+    background: #888;
 }
 
 .languageHeader, .gameHeader, .diffHeader, .playHeader {
@@ -263,13 +286,13 @@ body {
 }
 
 .game:hover {
-    border: 2px inset #FFB442;
+    border: 4px ridge #FFB442;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
     box-shadow: 1px 1px 4px 1px #252525;
 }
 
 .clicked {
-    border: 2px inset #FFB442;
+    border: 4px ridge #FFB442;
     -webkit-box-shadow: 1px 1px 4px 1px #252525;
     box-shadow: 1px 1px 4px 1px #252525;
 }
@@ -352,6 +375,16 @@ body {
     margin: auto;
     width: auto;
     height: auto;
+}
+
+.carousel-caption {
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 1px 4px 1px #252525;
+    box-shadow: 1px 1px 4px 1px #252525;
+    padding-top: 0;
+    background: #f3f3f3;
+    color: #252525;
+    opacity: 0.8;
 }
 
 .modal-body {

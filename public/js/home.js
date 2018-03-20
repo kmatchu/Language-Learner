@@ -36,9 +36,9 @@ var stateFun = (function () {
         var gameState = $(this).attr("value");
 
         // CSS EFFECTS
-        $(".figure > img").removeClass("clicked");
-        $(".figure > img").removeClass("unclicked");
-        $(".figure > img").addClass("unclicked");
+        $(".figure img").removeClass("clicked");
+        $(".figure img").removeClass("unclicked");
+        $(".figure img").addClass("unclicked");
         $("#" + gameState + "sel").removeClass("unclicked");
         $("#" + gameState + "sel").addClass("clicked");
 
@@ -49,9 +49,9 @@ var stateFun = (function () {
         var diffState = $(this).val();
 
         // CSS EFFECTS
-        $(".diffSel > button").removeClass("chosen");
-        $(".diffSel > button").removeClass("unchosen");
-        $(".diffSel > button").addClass("unchosen");
+        $(".diffSel button").removeClass("chosen");
+        $(".diffSel button").removeClass("unchosen");
+        $(".diffSel button").addClass("unchosen");
         $("#" + diffState).removeClass("unchosen");
         $("#" + diffState).addClass("chosen");
 
