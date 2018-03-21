@@ -73,8 +73,21 @@ module.exports = function(app) {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
+      progress: req.body.progress
     }).then(function(dbLogin) {
       res.json(dbLogin);
     });
   });
+
+  app.post("/api/update", function(req, res) {
+    db.Login.update({
+      progress: req.body.progress
+    }, {
+      where: {
+        username: req.body.username
+      }
+    }
+  )
+  });
+
 };

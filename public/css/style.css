@@ -122,7 +122,7 @@ body {
     right: 0;
 } */
 
-#userGreeting {
+#userGreeting, #progressbar {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height:20px;
@@ -133,10 +133,46 @@ body {
     cursor: default;
 }
 
+#currentLevel, #nextLevel {
+    font-size: 22px;
+}
+
 #userInfo {
     font-weight: 800;
     color: #FFB442;
     text-transform: uppercase;
+}
+
+.about {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 36px;
+}
+
+.progwrapper {
+    width: 175px;
+    height: 15px;  
+    background: #252525;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+#currentLevel {
+    padding-right: 10px;
+}
+
+#nextLevel {
+    padding-left: 10px;
+}
+
+.progress {
+    height: 15px;  
+    background: #FFB442;
+    text-align: left;
+    margin-bottom: 1px; 
+    border-radius: 4px;
+    transition: width .5s linear;     
 }
 
 .wrap.mainContent {

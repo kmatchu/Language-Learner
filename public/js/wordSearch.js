@@ -1,4 +1,6 @@
 let useArr = [];
+var difficulty = sessionStorage.getItem("diff");
+
 const getWords = function () {
     let checkArr = sessionStorage.getItem("wordArr").split(",")
 
@@ -218,18 +220,19 @@ $(document).on("click", ".clicker", function () {
     $(this).addClass("highlight");
     for (var i = 0; i < makeWordsSplit(useArr).length; i++) {
         if (makeWordsSplit(useArr)[i].toString() === currentGuess.toString()) {
-            $(".highlight").addClass("correct").removeClass("clicker").removeClass("highlight");
+            $(".highlight").addClass("wscorrect").removeClass("clicker").removeClass("highlight");
             $(".word" + i).addClass("greenText").text(currentGuess.toString().replace(/,/g, "")).removeClass("fadedText");
             currentGuess = [];
             if (!$(".clicker").length) {
                 $("#winModal").modal("show");;
+                won("wordsearch", difficulty); // updates progress data for user
             };
         }
     }
 });
 
 $(document).on("click", "#modalWSClose", function () {
-    $("#winModal").modal("hide");
+    $("#winModal").modal("hide");    
 });
 
 $(document).on("click", ".wrong", function () {

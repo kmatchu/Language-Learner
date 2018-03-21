@@ -61,7 +61,7 @@
     text-align: center;
 }
 
-.checkBtn, #wordSearchBtn {
+.checkBtn, #wordSearchBtn, .playAgainBtn, .returnHomeBtn {
     color: #252525;
     background: #FFB442;
     font-weight: 600;
@@ -86,7 +86,27 @@
 #wordSearchBtn.active:hover, 
 #wordSearchBtn:active.focus, 
 #wordSearchBtn:active:focus, 
-#wordSearchBtn:active:hover
+#wordSearchBtn:active:hover,
+.playAgainBtn:hover,
+.playAgainBtn:visited,
+.playAgainBtn:focus,
+.playAgainBtn.focus,
+.playAgainBtn.active.focus, 
+.playAgainBtn.active:focus, 
+.playAgainBtn.active:hover, 
+.playAgainBtn:active.focus, 
+.playAgainBtn:active:focus, 
+.playAgainBtn:active:hover,
+.returnHomeBtn:hover,
+.returnHomeBtn:visited,
+.returnHomeBtn:focus,
+.returnHomeBtn.focus,
+.returnHomeBtn.active.focus, 
+.returnHomeBtn.active:focus, 
+.returnHomeBtn.active:hover, 
+.returnHomeBtn:active.focus, 
+.returnHomeBtn:active:focus, 
+.returnHomeBtn:active:hover
  {
     background: rgb(255, 179, 65);
 }
@@ -132,3 +152,105 @@
     padding-top: 10px;
     padding-bottom: 5px;
 }
+
+/* WORDSEARCH */
+
+.boxWS  {
+    font-size: 32px;
+    /* background-color: #f8f8f8; */
+    border: 1px solid #FFB442;
+    color: #252525;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    position: relative;
+    float: left;
+    cursor: default;
+}
+
+.boxWS:hover:not(.flashWrong) {
+background-color: #FFB442;
+}
+
+.topleft {
+border-top-left-radius: 4px;
+}
+
+.topright {
+border-top-right-radius: 4px;
+}
+
+.bottomleft {
+border-bottom-left-radius: 4px;
+}
+
+.bottomright {
+border-bottom-right-radius: 4px;
+}
+
+.highlight {
+border: 2px solid green;
+text-shadow: 2px 2px 4px #888;
+}
+
+.flashWrong {
+background-color: #d44b4b;
+}
+
+.wscorrect   {
+background-color: #82d682;
+text-shadow: 2px 2px 4px #888;
+border: 2px solid green;
+}
+
+.foundWords { 
+border:solid 1px #252525;
+border-radius: 4px;
+padding-top: 5px;
+padding-bottom: 5px;
+font-size:42px;
+overflow: auto; 
+text-align: center;
+font-size: 16px;
+}
+
+.wrap {
+height: auto; 
+/* overflow:auto; */
+}
+
+.fadedText{
+color:#888;
+}
+
+.greenText{
+color:green;
+}
+
+.wsRow {
+text-align: center;
+overflow: hidden;
+}
+
+.wsContainer {
+text-align: center;
+}
+
+.wsContainer, .wsGame {
+text-align: center;
+min-width: 520px;
+padding-bottom: 15px;
+}
+
+.wsGame {
+border-radius: 4px;
+}
+
+.wsHeader {
+border-top: 8px solid #FFB442;
+padding-top: 10px;
+font-size: 16px;
+text-align: center;
+margin-bottom: 10px;
+}
+
