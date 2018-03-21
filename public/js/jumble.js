@@ -104,7 +104,10 @@ $(document).ready(function () {
                 win = false;
             };
         }
-        if (win) { $("#winModal").modal("show"); };
+        if (win) { 
+            $("#winModal").modal("show"); 
+            won("jumble", difficulty); // updates progress data for user
+        };
     };
 
     /**

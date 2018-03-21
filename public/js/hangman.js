@@ -110,6 +110,7 @@ var begin = function (event) {
 
         if (wins === 10) {
             $("#winModal").modal("show");
+            won("hangman", difficulty); // sets global var win defined in win.js to true
         }
         else {
             winWordsArr.splice(winWordsArr.indexOf(winWordRand), 1);

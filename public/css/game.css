@@ -61,7 +61,7 @@
     text-align: center;
 }
 
-.checkBtn, #wordSearchBtn {
+.checkBtn, #wordSearchBtn, .playAgainBtn, .returnHomeBtn {
     color: #252525;
     background: #FFB442;
     font-weight: 600;
@@ -86,7 +86,27 @@
 #wordSearchBtn.active:hover, 
 #wordSearchBtn:active.focus, 
 #wordSearchBtn:active:focus, 
-#wordSearchBtn:active:hover
+#wordSearchBtn:active:hover,
+.playAgainBtn:hover,
+.playAgainBtn:visited,
+.playAgainBtn:focus,
+.playAgainBtn.focus,
+.playAgainBtn.active.focus, 
+.playAgainBtn.active:focus, 
+.playAgainBtn.active:hover, 
+.playAgainBtn:active.focus, 
+.playAgainBtn:active:focus, 
+.playAgainBtn:active:hover,
+.returnHomeBtn:hover,
+.returnHomeBtn:visited,
+.returnHomeBtn:focus,
+.returnHomeBtn.focus,
+.returnHomeBtn.active.focus, 
+.returnHomeBtn.active:focus, 
+.returnHomeBtn.active:hover, 
+.returnHomeBtn:active.focus, 
+.returnHomeBtn:active:focus, 
+.returnHomeBtn:active:hover
  {
     background: rgb(255, 179, 65);
 }

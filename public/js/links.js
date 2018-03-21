@@ -1,11 +1,28 @@
-$(document).ready(function() {
-    $("#logo").on("click", function() {
+var progress = localStorage.getItem("progress");
+
+// set progress bar
+const updateProgress = () => {
+    if (progress) {
+        let currentLevel = parseInt(progress.split(";")[0]);
+        let percent = progress.split(";")[1];
+        let nextLevel = currentLevel + 1;
+        $(".progress").width(percent);
+        $("#currentLevel").text(currentLevel);
+        $("#nextLevel").text(nextLevel);
+    }
+}
+
+$(document).ready(function () {
+
+    updateProgress();
+
+    $("#logo").on("click", function () {
         console.log("clicked");
         if (localStorage.getItem("user") !== null) {
-            window.location.href="/home";
+            window.location.href = "/home";
         }
         else {
-            window.location.href="/";
+            window.location.href = "/";
         }
     });
 
@@ -28,8 +45,12 @@ $(document).ready(function() {
 
     hideLinks();
 
-    $(".logoutlink").on("click", function()  {
+    $(".logoutlink").on("click", function () {
+        let user = localStorage.getItem("user");
         localStorage.removeItem("user");
-        window.location.href = "index.html";
+        if(user !== "guest") {
+            localStorage.removeItem("progress");
+        }
+        window.location.href = "/";
     });
 });

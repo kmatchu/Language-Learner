@@ -1,4 +1,6 @@
 let useArr = [];
+var difficulty = sessionStorage.getItem("diff");
+
 const getWords = function () {
     let checkArr = sessionStorage.getItem("wordArr").split(",")
 
@@ -223,13 +225,14 @@ $(document).on("click", ".clicker", function () {
             currentGuess = [];
             if (!$(".clicker").length) {
                 $("#winModal").modal("show");;
+                won("wordsearch", difficulty); // updates progress data for user
             };
         }
     }
 });
 
 $(document).on("click", "#modalWSClose", function () {
-    $("#winModal").modal("hide");
+    $("#winModal").modal("hide");    
 });
 
 $(document).on("click", ".wrong", function () {
